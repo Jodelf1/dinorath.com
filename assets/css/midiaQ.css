@@ -1,0 +1,15 @@
+/* Desktop */
+@media screen and (min-width: 601px){
+    .hide-desktop {
+        display: none;
+        overflow: hidden;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px){
+    .hide-mobile {
+        display: none;
+        overflow: hidden;
+    }
+}

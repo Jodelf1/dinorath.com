@@ -1,0 +1,103 @@
+:root {
+    /* COLOURS */
+    --primary-color: #F2055D;
+    --black-color: #000000;
+    --dark-color: #121212;
+    --white-color: #FFFFFF;
+    --light-color: #ececec2f;
+    --gray-color: #929292;
+
+    /* Size */
+    --big-sz: 3.4rem;
+    --mid-sz: 2.4rem;
+    --small-sz: 1.6rem;
+    --vsmall-sz: 1.2rem;
+
+    /* Fonts */
+    --normal-font: 500;
+
+    /* Paddings */
+    --button-p: 0.7rem 1rem;
+
+    /* Borders */
+    --button-radius: 1rem;
+}
+
+.container {
+    width: 100%;
+}
+
+.content{
+    padding: 5rem
+}
+
+.over-hidden{
+    overflow: hidden;
+}
+
+.full{
+    width: 100%;
+    height: 100%;
+}
+
+.f-width{
+    width: 100%;
+}
+
+/* Fonts */
+h1{
+    font-size: 2rem;
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+h3{
+    font-size: 1rem;
+}
+
+p{
+    font-size: 1rem;
+}
+
+.normal-font {
+    font-weight: var(--normal-font);
+}
+
+.small-sz {
+    font-size: var(--small-sz);
+}
+/* FlexBox */
+
+.flex {
+    display: flex;
+}
+
+.col {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.f-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.a-center{
+    align-items: center;
+}
+
+.j-between{
+    justify-content: space-between;
+}
+
+.j-around{
+    justify-content: space-around;
+}
+.t-center{
+    text-align: center;
+}
