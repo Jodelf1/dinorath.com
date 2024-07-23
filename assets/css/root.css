@@ -51,6 +51,7 @@
 
 .icon {
     color: var(--white-color);
+    background-color: transparent;
     font-size: var(--small-sz);
 }
 

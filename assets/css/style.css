@@ -41,5 +41,24 @@ header {
 /* Lançamentos */
 .lancamentos-section{
     background-image: linear-gradient(180deg, var(--primary-color), var(--black-color));
-    
+}
+
+.lancamentos-cards{
+    gap: 2.4rem;
+}
+
+.lancamento-card{
+    background-size: cover;
+}
+
+.lancamento-card:nth-child(1){
+    background-image: url(https://supaservicos.github.io/chelsea-content/img/musics/Unfollow.gif);
+}
+
+.lancamento-card:nth-child(2){
+    background-image: url(https://supaservicos.github.io/chelsea-content/img/musics/Fall.gif);
+}
+
+.lancamento-card:nth-child(3){
+    background-image: url(https://supaservicos.github.io/chelsea-content/img/musics/Over-Again-Ft.-Florito.gif);
 }
