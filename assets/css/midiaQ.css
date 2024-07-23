@@ -12,4 +12,20 @@
         display: none;
         overflow: hidden;
     }
+
+    header {
+        padding: 2rem 2rem;
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

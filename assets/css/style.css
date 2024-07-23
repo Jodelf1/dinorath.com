@@ -1,12 +1,45 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat';
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
     text-decoration: none;
     list-style: none;
 }
 
-html{
+html {
     font-size: 60.3%;
+    background-color: var(--black-color);
+    color: var(--white-color);
+}
+
+
+/* Header */
+header {
+    padding: 2rem 10rem;
+    width: 100%;
+    position: absolute;
+}
+
+.navbar {
+    width: 100%;
+}
+
+.nav-link .link {
+    font-size: var(--small-sz);
+}
+
+/* Her Sectio */
+.hero-section{
+    background-image: url(https://supaservicos.github.io/chelsea-content/img/photos/IMG_2268.JPG);
+    background-size: cover;
+    background-attachment: fixed;
+    gap: 2.4rem;
+}
+
+/* Lançamentos */
+.lancamentos-section{
+    background-image: linear-gradient(180deg, var(--primary-color), var(--black-color));
+    
 }

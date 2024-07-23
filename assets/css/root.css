@@ -1,6 +1,7 @@
 :root {
     /* COLOURS */
-    --primary-color: #F2055D;
+    --primary-color: #CA3110;
+    --second-color: #F1920A;
     --black-color: #000000;
     --dark-color: #121212;
     --white-color: #FFFFFF;
@@ -20,7 +21,37 @@
     --button-p: 0.7rem 1rem;
 
     /* Borders */
-    --button-radius: 1rem;
+    --button-radius: 2rem;
+}
+
+/* Scroll Style */
+::-webkit-scrollbar {
+    background-color: var(--primary-color);
+    width: 10px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    cursor: url('/assets/img/cursor.svg'), auto;
+    background: var(--second-color);
+    border-radius: 5px;
+    animation: changeColor 6s linear infinite;
+}
+
+.link,
+.nav-link {
+    color: var(--white-color);
+}
+
+.link:hover,
+.nav-link:hover{
+    color: var(--second-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.icon {
+    color: var(--white-color);
+    font-size: var(--small-sz);
 }
 
 .container {
@@ -28,7 +59,8 @@
 }
 
 .content{
-    padding: 5rem
+    padding: 5rem 10rem;
+    height: 100vh;
 }
 
 .over-hidden{
