@@ -131,6 +131,15 @@ p{
 .j-around{
     justify-content: space-around;
 }
+.j-center{
+    justify-content: center;
+}
 .t-center{
     text-align: center;
+}
+.t-left{
+    text-align: left;
+}
+.t-right{
+    text-align: right;
 }
