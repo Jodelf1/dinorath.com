@@ -12,7 +12,9 @@
         display: none;
         overflow: hidden;
     }
-
+    .content{
+        padding: 5rem 2.5rem;
+    }
     header {
         padding: 2rem 2rem;
         width: 100%;
@@ -27,5 +29,46 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    /*Bio*/
+    .bio-text{
+        font-size: var(--small-sz);
+        line-height: 23.99px;
+    }
+    .bio .bio-text{
+        width: 100%;
+    }
+    .silver-icon{
+        width: 8rem;
+    }
+    .bio-content{
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    .bio-content h1{
+        font-size: var(--mid-sz);
+        padding: 2rem 0;
+    }
+    .bio-content:nth-child(3), .bio-content:last-child{
+        flex-direction: column;
+    }
+    .bio-section-content{
+        width: 90%;
+    }
+    .ms-list{
+        font-size: var(--small-sz);
+        padding-left: 2rem;
+    }
+    .ms-list li{
+        padding-bottom: 1rem; 
+     }
+     .contact-section{
+        height: 90vh;
+    }
+
+    /*Footer*/
+    footer{
+        flex-direction: column-reverse;
     }
 }
