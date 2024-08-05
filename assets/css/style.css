@@ -34,7 +34,7 @@ header {
 
 /* Her Sectio */
 .hero-section{
-    background-image:  linear-gradient(180deg, rgba(213, 56, 10, 0.5) 86.02%, #D5380A 100%), url(https://supaservicos.github.io/chelsea-content/img/photos/IMG_2268.JPG);
+    background-image:  linear-gradient(180deg, rgba(213, 56, 10, 0.5) 86.02%, #D5380A 100%), url(https://supaservicos.github.io/chelsea-content/img/photos/IMG_2268.webp);
     background-size: cover;
     background-attachment: fixed;
     gap: 2.4rem;
