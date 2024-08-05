@@ -13,6 +13,7 @@
     font-family: "PlayfairDisplay", serif;
     font-optical-sizing: auto;
     text-decoration: none;
+    list-style-type: none;
 }
 
 html {
@@ -61,23 +62,53 @@ header {
 }
 
 .lancamento-card:nth-child(1){
-    background-image: url(https://supaservicos.github.io/chelsea-content/img/musics/Unfollow.gif);
+    background-image: url();
 }
 
 .lancamento-card:nth-child(2){
-    background-image: url(https://supaservicos.github.io/chelsea-content/img/musics/Fall.gif);
+    background-image: url();
 }
 
 .lancamento-card:nth-child(3){
-    background-image: url(https://supaservicos.github.io/chelsea-content/img/musics/Over-Again-Ft.-Florito.gif);
+    background-image: url();
 }
 
 
 /*Mais Dinorath*/
+.mais-dinorath-section{
+    height: 100vh;
+}
 
 .left-side{
-    background: url(https://supaservicos.github.io/chelsea-content/img/photos/IMG_2256.JPG) ;
+    background: linear-gradient(180deg, #12121285 70%, #12121263 90%), url(https://supaservicos.github.io/chelsea-content/img/photos/IMG_2256.webp) ;
+    background-size: cover;
     width: 50%;
+    padding: 5rem 10rem;
+}
+
+.rigth-side{
+    width: 50%;
+    gap: 2.4rem;
+}
+
+.left-side .title-section{
+    width: 30%
+}
+
+.left-side .title-section .title-more{
+    font-size: var(--mid-sz);
+    border-bottom: solid 5px var(--second-color);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+
+.menu-lis{
+    gap: 3rem;
+}
+
+.menu-list li .link{
+    font-size: 2rem;
 }
 
 /*Bio */
@@ -138,8 +169,16 @@ header {
 /*Footer*/ 
 
 footer{
-    padding: 5rem;
+    height: 12rem;
+    padding: 2rem 5rem;
 }
+footer section{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 footer p{
     font-size: var(--small-sz);
 }
