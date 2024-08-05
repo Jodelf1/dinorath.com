@@ -27,13 +27,12 @@
 .title{
     font-size: var(--mid-sz);
     border-bottom: solid 5px var(--second-color);
-    max-width: 15rem;
     font-weight: bold;
     margin-bottom: 1rem;
 }
 
 .title-section{
-    width: 100%;
+    width: 5%;
 }
 
 /* Cards */
