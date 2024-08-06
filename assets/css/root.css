@@ -53,7 +53,6 @@
     color: var(--white-color);
     background-color: transparent;
     font-size: var(--small-sz);
-    width: 5rem;
 }
 
 .container {

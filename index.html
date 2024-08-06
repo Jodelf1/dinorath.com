@@ -62,16 +62,18 @@
             <section class="lancamentos-cards cards-section">
                 <!-- Cards Arrow -->
                 <section class="cards-arrow">
-                    <a href="">
-                        <img class="icon" src="https://supaservicos.github.io/chelsea-content/img/icons/chevron-back.svg" alt="" srcset="">
+                    <a href="#" class="prev-arrow">
+                        <img class="icon" width="25rem"
+                            src="https://supaservicos.github.io/chelsea-content/img/icons/chevron-back.svg" alt="">
                     </a>
-                    <a href="">
-                        <img class="icon" src="https://supaservicos.github.io/chelsea-content/img/icons/chevron-next.svg" alt="" srcset="">
+                    <a href="#" class="next-arrow">
+                        <img class="icon" width="25rem"
+                            src="https://supaservicos.github.io/chelsea-content/img/icons/chevron-next.svg" alt="">
                     </a>
                 </section>
                 <!-- Cards Content -->
-                <section class="flex f-center full">
-                    <section class="slide-cards cards-first flex full f-center">
+                <section class="slide-cards flex f-center full">
+                    <section class="conjunto cards-first flex full f-center active">
                         <a href="https://onerpm.link/Unfollow" class="lancamento-card cl-border flex col big-card">
                             <video class="bg-video"
                                 src="https://supaservicos.github.io/chelsea-content/img/videos/Unfollow.webm" autoplay
@@ -85,8 +87,8 @@
                         </a>
                         <a href="https://onerpm.link/Catarse" class="lancamento-card c-border flex col big-card">
                             <video class="bg-video"
-                                src="https://supaservicos.github.io/chelsea-content/img/videos/Toit%20Et%20Moi.webm" autoplay
-                                loop muted></video>
+                                src="https://supaservicos.github.io/chelsea-content/img/videos/Toit%20Et%20Moi.webm"
+                                autoplay loop muted></video>
                             <div class="card-content">
                                 <h2 class="card-title">Toit Et Moi</h2>
                                 <p class="card-link">Ouvir Agora
@@ -96,8 +98,8 @@
                         </a>
                         <a href="https://onerpm.link/Catarse" class="lancamento-card cr-border flex col big-card">
                             <video class="bg-video"
-                                src="https://supaservicos.github.io/chelsea-content/img/videos/Weya.webm" autoplay
-                                loop muted></video>
+                                src="https://supaservicos.github.io/chelsea-content/img/videos/Weya.webm" autoplay loop
+                                muted></video>
                             <div class="card-content">
                                 <h2 class="card-title">Weya</h2>
                                 <p class="card-link">Ouvir Agora
@@ -106,10 +108,14 @@
                             </div>
                         </a>
                     </section>
+                    <!-- Outro conjunto -->
+                    <section class="conjunto cards-first flex full f-center">
+                        <!-- Coloque mais cards aqui -->
+                    </section>
                 </section>
-
             </section>
         </section>
+
 
         <!-- Videos -->
         <section class="videos-section flex col content">
@@ -202,6 +208,37 @@
     <!-- Script -->
     <script src="/assets/js/index.js"></script>
     <script>
+        // Lançamentos
+        document.addEventListener('DOMContentLoaded', () => {
+            const prevArrow = document.querySelector('.prev-arrow');
+            const nextArrow = document.querySelector('.next-arrow');
+            const conjuntos = document.querySelectorAll('.conjunto');
+
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                conjuntos.forEach((conjunto, index) => {
+                    conjunto.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            prevArrow.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : conjuntos.length - 1;
+                updateCarousel();
+            });
+
+            nextArrow.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentIndex = (currentIndex < conjuntos.length - 1) ? currentIndex + 1 : 0;
+                updateCarousel();
+            });
+
+            // Inicializa o carrossel
+            updateCarousel();
+        });
+
+        // Videos
         document.addEventListener('DOMContentLoaded', () => {
             const cards = document.querySelectorAll('.video-card');
             const dots = document.querySelectorAll('.dot');

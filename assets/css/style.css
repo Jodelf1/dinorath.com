@@ -77,6 +77,14 @@ header {
     height: 100%;
 }
 
+.slide-cards .conjunto {
+    display: none;
+}
+
+.slide-cards .conjunto.active {
+    display: flex;
+}
+
 /* Vídeo */
 .videos-section {
     background-size: cover;
