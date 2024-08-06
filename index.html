@@ -7,7 +7,7 @@
     <meta name="description" content=" ">
     <title>Chelsea Dinorath</title>
     <!-- Font -->
-     
+
     <!-- Icons -->
 
 
@@ -53,6 +53,7 @@
                 <ion-icon class="icon" name="arrow-round-forward"></ion-icon>
             </a>
         </section>
+
         <!-- Lançamentos -->
         <section class="lancamentos-section content">
             <section class="title-section">
@@ -72,6 +73,9 @@
                 <section class="flex f-center full">
                     <section class="slide-cards cards-first flex full f-center">
                         <a href="" class="lancamento-card cl-border flex col big-card flex col">
+                            <video class="card-video"
+                                src="https://supaservicos.github.io/chelsea-content/img/videos/Burn%20It.webm" autoplay
+                                loop muted></video>
                             <h2 class="card-title">Unfollow</h2>
                             <p href="" class="card-link">Ouvir Agora
                                 <ion-icon class="icon" name="arrow-round-forward"></ion-icon>
@@ -96,11 +100,27 @@
 
         <!-- Videos -->
         <section class="videos-section flex col content">
+            <video id="background-video" autoplay loop muted></video>
             <section class="title-section">
                 <h2 class="title">Vídeos</h2>
             </section>
-            <section>
-
+            <section class="video-card-section flex f-center">
+                <a href="#" class="video-card flex col f-center active"
+                    data-bg="https://supaservicos.github.io/chelsea-content/img/videos/Burn%20It.webm">
+                    <img src="https://i.ytimg.com/vi/vzWG0Y2gnMw/maxresdefault.jpg" alt="">
+                    <h2 class="card-title">Chelse Ddinorath - Burn It</h2>
+                </a>
+                <a href="#" class="video-card flex col f-center"
+                    data-bg="https://supaservicos.github.io/chelsea-content/img/videos/24%20Sessions%20of%20Blue.webm">
+                    <img src="https://i.ytimg.com/vi/FJFbueORT1Y/hq720.jpg" alt="">
+                    <h2 class="card-title">Chelse Ddinorath - 24 Sessions of Blue</h2>
+                </a>
+                <!-- outros cards -->
+            </section>
+            <section class="card-navgator flex f-center">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </section>
         </section>
 
@@ -112,7 +132,7 @@
             </section>
             <section class="rigth-side flex col f-center">
                 <img width="100rem" src="https://supaservicos.github.io/chelsea-content/img/logo1.svg"
-                        alt="logo Chelsea Dinorath" srcset="">
+                    alt="logo Chelsea Dinorath" srcset="">
                 <nav class="md-menu">
                     <ul class="menu-list flex col f-center ">
                         <li><a href="./bio.html" class="link">Bio</a></li>
@@ -144,6 +164,45 @@
     </footer>
     <!-- Script -->
     <script src="/assets/js/index.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.video-card');
+            const dots = document.querySelectorAll('.dot');
+            const backgroundVideo = document.getElementById('background-video');
+
+            let activeIndex = 0;
+
+            function updateCarousel(index) {
+                cards.forEach((card, i) => {
+                    card.classList.toggle('active', i === index);
+                });
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+
+                // Transição suave da opacidade
+                backgroundVideo.style.opacity = 0; // Tornar o vídeo atual invisível
+                setTimeout(() => {
+                    const bgVideo = cards[index].dataset.bg;
+                    backgroundVideo.src = bgVideo;
+                    backgroundVideo.load();
+                    backgroundVideo.oncanplay = () => {
+                        backgroundVideo.style.opacity = 1; // Tornar o novo vídeo visível
+                    };
+                }, 500); // Espera pela duração da transição
+            }
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    activeIndex = index;
+                    updateCarousel(index);
+                });
+            });
+
+            // Inicializa o carrossel
+            updateCarousel(activeIndex);
+        });
+    </script>
 </body>
 
 </html>
