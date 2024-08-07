@@ -20,9 +20,18 @@ html {
     font-size: 60.3%;
     background-color: var(--black-color);
     color: var(--white-color);
+    height: 100%;
+    overflow: hidden;
 }
-
-
+body{
+    overflow: hidden;
+    position: relative;
+}
+main{
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
 /* Header */
 header {
     padding: 2rem 10rem;
@@ -200,6 +209,7 @@ header {
 /*Mais Dinorath*/
 .mais-dinorath-section{
     height: 100vh;
+    scroll-snap-align: start;
 }
 
 .left-side{
@@ -226,8 +236,8 @@ header {
 }
 
 
-.menu-lis{
-    gap: 3rem;
+.menu-list{
+    gap: 2rem;
 }
 
 .menu-list li .link{
@@ -279,6 +289,7 @@ header {
 .contact-section{
     height: 70vh;
     padding: 5rem 10rem;
+    scroll-snap-align: start;
 }
 /*Events*/
 
@@ -286,8 +297,25 @@ header {
     background: var(--black-color);
     gap: 2rem;
 }
-
-
+/*Fotos*/
+.fotos-section{
+    background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(159,162,162,0.1601890756302521) 59%, rgba(34,36,36,1) 100%), url(https://supaservicos.github.io/chelsea-content/img/photos/IMG_2268.webp);
+    background-size: cover;
+    background-position: center;
+    background-attachment: local;
+    gap: 3rem;
+}
+.swiper-wrapper{
+    height: 45rem;
+}
+.swiper-slide{
+    padding: 1rem;
+    cursor: pointer;
+}
+.photo-slide-img{
+    width: 100%;
+    object-fit: cover;
+}
 
 /*Footer*/ 
 footer{

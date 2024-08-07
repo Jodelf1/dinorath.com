@@ -7,6 +7,8 @@
     <meta name="description" content=" ">
     <title>Chelsea Dinorath</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
     <!-- Style -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/objects.css">
@@ -41,9 +43,9 @@
     <!-- Main Content -->
     <main class="container">
         <!-- Hero Section -->
-        <section class="hero-section content flex col f-center">
+        <section class="hero-section content flex col f-center" id="sessao1">
             <img width="400rem" src="https://supaservicos.github.io/chelsea-content/img/icons/TITLE.svg" alt=""
-                srcset="">
+                srcset="" class="song-img-hero">
             <a class="btn" href="">
                 Ouvir Agora
                 <ion-icon class="icon" name="arrow-round-forward"></ion-icon>
@@ -51,7 +53,7 @@
         </section>
 
         <!-- Lançamentos -->
-        <section class="lancamentos-section content">
+        <section class="lancamentos-section content" id="sessao2">
             <section class="title-section">
                 <h2 class="title">Lançamentos</h2>
             </section>
@@ -110,9 +112,8 @@
             </section>
         </section>
 
-
         <!-- Videos -->
-        <section class="videos-section flex col content">
+        <section class="videos-section flex col content" id="sessao3">
             <video id="background-video" autoplay loop muted></video>
             <section class="title-section">
                 <h2 class="title">Vídeos</h2>
@@ -161,8 +162,45 @@
             </section>
         </section>
 
+        <!-- Fotos -->
+        <section class="swiper content fotos-section flex col j-center" id="fotos">
+            <section class="title-section">
+                <h2 class="title">Fotos</h2>
+            </section>
+            <swiper-container class="swiper-wrapper " virtual="true" slides-per-view="5" >
+              <swiper-slide class="swiper-slide photo-card"  onclick="trocarFundo(this)">
+                  <img class="photo-slide-img" src="https://supaservicos.github.io/chelsea-content/img/photos/IMG_2268.webp" alt="Chelsea Dinorath">     
+              </swiper-slide>
+
+              <swiper-slide class="swiper-slide photo-card"  onclick="trocarFundo(this)">
+                  <img class="photo-slide-img" src="https://supaservicos.github.io/chelsea-content/img/photos/IMG_2252.webp" alt="Chelsea Dinorath">
+              </swiper-slide>
+
+              <swiper-slide class="swiper-slide photo-card"  onclick="trocarFundo(this)">
+                  <img class="photo-slide-img" src="https://supaservicos.github.io/chelsea-content/img/photos/IMG_2249.webp" alt="Chelsea Dinorath">
+              </swiper-slide>
+
+              <swiper-slide class="swiper-slide photo-card"  onclick="trocarFundo(this)">
+                  <img class="photo-slide-img" src="https://supaservicos.github.io/chelsea-content/img/photos/IMG_2264.webp" alt="Chelsea Dinorath">
+              </swiper-slide>
+
+              <swiper-slide class="swiper-slide photo-card"  onclick="trocarFundo(this)">
+                  <img class="photo-slide-img" src="https://supaservicos.github.io/chelsea-content/img/photos/IMG_2250.webp" alt="Chelsea Dinorath">
+              </swiper-slide>
+
+              <swiper-slide class="swiper-slide photo-card"  onclick="trocarFundo(this)">
+                  <img class="photo-slide-img" src="https://supaservicos.github.io/chelsea-content/img/photos/IMG_2257.webp" alt="Chelsea Dinorath">
+              </swiper-slide>
+
+              <swiper-slide class="swiper-slide photo-card"  onclick="trocarFundo(this)">
+                  <img class="photo-slide-img" src="https://supaservicos.github.io/chelsea-content/img/photos/IMG_2263.webp" alt="Chelsea Dinorath">
+              </swiper-slide>
+            </swiper-container>
+
+      </section>
+
         <!-- Prémios-->
-        <section class="content hide-mobile">
+        <section class="content hide-mobile" id="sessao5">
             <section class="title-section">
                 <h2 class="title">Prémios</h2>
             </section>
@@ -199,7 +237,7 @@
         </section>
 
         <!-- Sstream cards-->
-        <section class="content hide-mobile">
+        <section class="content hide-mobile" id="sessao5">
             <section class="stream-cards flex f-center full cards-section">
                 <a href="" class="stream-card big-card youtube-b">
                     <section class="card-img">
@@ -231,8 +269,8 @@
             </section>
         </section>
 
-        <section class="mais-dinorath-section flex row ">
-            <section class="left-side">
+        <section class="mais-dinorath-section flex row" id="sessao6">
+            <section class="left-side hide-mobile">
                 <section class="title-section">
                     <h2 class="title-more">Mais Dinorath</h2>
                 </section>
@@ -271,6 +309,17 @@
     </footer>
     <!-- Script -->
     <script src="./assets/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+        <script>
+            function trocarFundo(elemento) {
+                const fotos = document.getElementById('fotos');
+                const img = elemento.querySelector('img');
+                if (img) {
+                    const imagemUrl = img.src;
+                    fotos.style.backgroundImage = `radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(159,162,162,0.1601890756302521) 59%, rgba(34,36,36,1) 100%), url(${imagemUrl})`;
+                }
+            }
+          </script>
 </body>
 
 </html>
