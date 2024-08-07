@@ -2,8 +2,8 @@
 
 @font-face {
     font-family: 'PlayfairDisplay';
-    src: url('../fonts/PlayfairDisplay-VariableFont_wght.ttf') format('ttf'), 
-    ;
+    src: url('../fonts/PlayfairDisplay-VariableFont_wght.ttf') format('ttf'),;
+    font-display: swap;
   }
 
 * {
@@ -208,6 +208,11 @@ header {
 .stream-card .card-info{
     gap: 1rem;
     color: var(--white-color)
+}
+
+/* fotos-section */
+.fotos-section{
+    background-size: cover;
 }
 
 /*Mais Dinorath*/
