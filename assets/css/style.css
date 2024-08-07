@@ -176,6 +176,26 @@ header {
     opacity: 1;
 }
 
+/* stream cards */
+.stream-cards{
+    gap: 2.4rem;
+}
+
+.stream-card{
+    gap: 3rem;
+}
+
+.stream-card .card-img {
+    background-color: #d9d9d9;
+    overflow:hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.stream-card .card-info{
+    gap: 1rem;
+    color: var(--white-color)
+}
 
 /*Mais Dinorath*/
 .mais-dinorath-section{

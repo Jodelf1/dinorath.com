@@ -55,6 +55,25 @@
     border-right-color: var(--second-color);
 }
 
+/* borders */
+.youtube-b{
+    border:solid 5px var(--black-color);
+    border-top-color: #FF0302;
+    border-left-color: #FF0302;
+}
+
+.applemusic-b{
+    border:solid 5px var(--black-color);
+    border-top-color: #FD5166;
+    border-bottom-color: #FD5166;
+}
+
+.spotify-b{
+    border:solid 5px var(--black-color);
+    border-bottom-color: #1ED760;
+    border-right-color: #1ED760;
+}
+
 /* Cards sextion */
 .cards-section{
     width: 100%;
@@ -88,6 +107,10 @@
     height: 45rem;
 }
 
+.stream-card{
+    background-color: #FFFFFF10;
+}
+
 .card-title{
     font-size: var(--small-sz);
     color: var(--white-color);
@@ -115,3 +138,14 @@
     color: var(--primary-color);
 }
 
+.youtube-b:hover{
+    border:solid 5px #FF0302;
+}
+
+.applemusic-b:hover{
+    border:solid 5px #FD5166;
+}
+
+.spotify-b:hover{
+    border:solid 5px #1ED760;
+}
