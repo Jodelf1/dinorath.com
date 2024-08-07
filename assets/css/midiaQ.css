@@ -23,7 +23,10 @@
         justify-content: center;
         align-items: center;
     }
-
+    .body::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
     .navbar{
         width: 100%;
         display: flex;
@@ -79,7 +82,13 @@
     }
 
     /*Footer*/
-    footer{
+    .footer-section{
         flex-direction: column-reverse;
+        padding: 1.5rem 2.5rem;
+        gap: 1rem;
+    }
+    .social-links-area{
+        align-items: start;
+        gap: 1rem;
     }
 }
