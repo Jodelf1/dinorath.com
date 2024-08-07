@@ -25,12 +25,10 @@ html {
 }
 body{
     overflow: hidden;
-    position: relative;
-}
-main{
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    position: relative;
 }
 /* Header */
 header {
@@ -54,7 +52,13 @@ header {
     background-size: cover;
     background-attachment: fixed;
     gap: 2.4rem;
-
+}
+.menu-button{
+    border-radius: 50%;
+    border: 0.5rem solid var(--second-color);
+    padding: 1rem;
+    position: absolute;
+    bottom: 4rem;
 }
 
 /* Lançamentos */
@@ -299,7 +303,7 @@ header {
 }
 /*Fotos*/
 .fotos-section{
-    background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(159,162,162,0.1601890756302521) 59%, rgba(34,36,36,1) 100%), url(https://supaservicos.github.io/chelsea-content/img/photos/IMG_2268.webp);
+    background: radial-gradient(circle, rgba(255,255,255,0) 0%,  rgba(34,36,36,1) 100%), url(https://supaservicos.github.io/chelsea-content/img/photos/IMG_2268.webp);
     background-size: cover;
     background-position: center;
     background-attachment: local;
@@ -321,6 +325,9 @@ header {
 footer{
     height: 15rem;
     padding: 3rem 5rem;
+    position: relative;
+    bottom: 0;
+    scroll-snap-align: start;
 }
 
 footer section{
@@ -329,7 +336,12 @@ footer section{
     flex-direction: column;
     justify-content: space-between;
 }
-
+.social-links-area{
+    align-items: end;
+}
+.social-links{
+    gap: 1rem;
+}
 footer p{
     font-size: var(--small-sz);
 }

@@ -27,8 +27,8 @@
 /* Scroll Style */
 ::-webkit-scrollbar {
     background-color: var(--primary-color);
-    width: 10px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -124,7 +124,9 @@ p{
 .a-center{
     align-items: center;
 }
-
+.a-right{
+    align-items: end;
+}
 .j-between{
     justify-content: space-between;
 }
