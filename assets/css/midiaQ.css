@@ -30,7 +30,18 @@
         justify-content: center;
         align-items: center;
     }
-
+    .song-img-hero{
+        width: 25rem;
+    }
+ 
+    .video-card img{
+        width: 35rem;
+        height: auto;
+    }
+    .mais-dinorath-section{
+        align-items: center;
+        justify-content: center;
+    }
     /*Bio*/
     .bio-text{
         font-size: var(--small-sz);
