@@ -28,6 +28,36 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel();
 });
 
+// premios
+document.addEventListener('DOMContentLoaded', () => {
+    const prevArrow = document.querySelector('.prev-p');
+    const nextArrow = document.querySelector('.next-p');
+    const conjuntos = document.querySelectorAll('.premio');
+
+    let currentIndex = 0;
+
+    function updateCarouselP() {
+        conjuntos.forEach((conjunto, index) => {
+            conjunto.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    prevArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : conjuntos.length - 1;
+        updateCarouselP();
+    });
+
+    nextArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentIndex = (currentIndex < conjuntos.length - 1) ? currentIndex + 1 : 0;
+        updateCarouselP();
+    });
+
+    // Inicializa o carrossel
+    updateCarouselP();
+});
+
 // Videos
 document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.video-card');
