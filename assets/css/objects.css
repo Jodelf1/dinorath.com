@@ -152,5 +152,9 @@
 .photo-card{
     width: 30rem;
     height: 45rem;
-    
+}
+.photo-slide-img{
+    border:solid 5px transparent;
+    border-top-color: var(--white-color);
+    border-left-color: var(--white-color);
 }
