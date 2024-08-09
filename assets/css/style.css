@@ -2,9 +2,9 @@
 
 @font-face {
     font-family: 'PlayfairDisplay';
-    src: url('../fonts/PlayfairDisplay-VariableFont_wght.ttf') format('ttf'),;
+    src: url('../fonts/PlayfairDisplay-VariableFont_wght.ttf') format('ttf'), ;
     font-display: swap;
-  }
+}
 
 * {
     padding: 0;
@@ -23,13 +23,15 @@ html {
     height: 100%;
     overflow: hidden;
 }
-body{
+
+body {
     overflow: hidden;
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     position: relative;
 }
+
 /* Header */
 header {
     padding: 2rem 10rem;
@@ -47,34 +49,28 @@ header {
     font-size: var(--small-sz);
 }
 
-/* Her Sectio */
-.hero-section{
-    background-image:  linear-gradient(180deg, rgba(213, 56, 10, 0.5) 86.02%, #D5380A 100%), url(https://supaservicos.github.io/chelsea-content/img/photos/IMG_2268.webp);
+
+/* Hero Section */
+.hero-section {
+    background-image: linear-gradient(180deg, rgba(213, 56, 10, 0.5) 86.02%, #D5380A 100%), url(https://supaservicos.github.io/chelsea-content/img/photos/IMG_2268.webp);
     background-size: cover;
     background-attachment: fixed;
     gap: 2.4rem;
 }
-.menu-button{
-    border-radius: 50%;
-    border: 0.5rem solid var(--second-color);
-    padding: 1rem;
-    position: absolute;
-    bottom: 4rem;
-}
 
 /* Lançamentos */
-.lancamentos-section{
+.lancamentos-section {
     background-image: linear-gradient(180deg, var(--primary-color), var(--black-color));
 }
 
-.lancamentos-cards{
+.lancamentos-cards {
     gap: 2.4rem;
 }
 
-.lancamento-card{
+.lancamento-card {
     overflow: hidden;
     position: relative;
-    top:-2rem;
+    top: -2rem;
 }
 
 .bg-video {
@@ -85,7 +81,7 @@ header {
     height: 100%;
     object-fit: cover;
     z-index: 0;
-    filter: brightness(0.7); 
+    filter: brightness(0.7);
 }
 
 .card-content {
@@ -97,7 +93,7 @@ header {
 }
 
 .conjunto,
-.premio{
+.premio {
     width: 100%;
     height: 100%;
     gap: 0 2.4rem;
@@ -120,7 +116,8 @@ header {
     z-index: 1;
     position: relative;
     background-blend-mode: darken;
-    background-color: rgba(0, 0, 0, 0.6); /* Layer escura */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Layer escura */
 }
 
 #background-video {
@@ -130,10 +127,10 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.6); 
+    filter: brightness(0.6);
     z-index: -1;
-    opacity: 0; 
-    transition: opacity 300ms ease-in-out; 
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
 }
 
 .video-card-section {
@@ -148,19 +145,19 @@ header {
     position: absolute;
     opacity: 0;
     transform: scale(0.95);
-    transition: opacity 500ms ease-in-out, transform 500ms ease-in-out; 
+    transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
 }
 
 
 .video-card.active {
     display: flex;
     opacity: 1;
-    transform: scale(1); 
+    transform: scale(1);
 }
 
-.video-card:hover{
-    filter: brightness(0.6); 
-    transition:all 200ms ease-in-out;
+.video-card:hover {
+    filter: brightness(0.6);
+    transition: all 200ms ease-in-out;
 }
 
 .video-card img {
@@ -191,50 +188,50 @@ header {
 }
 
 /* stream cards */
-.stream-cards{
+.stream-cards {
     gap: 2.4rem;
 }
 
-.stream-card{
+.stream-card {
     gap: 3rem;
 }
 
 .stream-card .card-img {
     background-color: #d9d9d9;
-    overflow:hidden;
+    overflow: hidden;
     width: 100%;
     height: 100%;
 }
 
-.stream-card .card-info{
+.stream-card .card-info {
     gap: 1rem;
     color: var(--white-color)
 }
 
 
 /*Mais Dinorath*/
-.mais-dinorath-section{
+.mais-dinorath-section {
     height: 100vh;
     scroll-snap-align: start;
 }
 
-.left-side{
-    background: linear-gradient(180deg, #12121285 70%, #12121263 90%), url(https://supaservicos.github.io/chelsea-content/img/photos/IMG_2256.webp) ;
+.left-side {
+    background: linear-gradient(180deg, #12121285 70%, #12121263 90%), url(https://supaservicos.github.io/chelsea-content/img/photos/IMG_2256.webp);
     background-size: cover;
     width: 50%;
     padding: 5rem 10rem;
 }
 
-.rigth-side{
+.rigth-side {
     width: 50%;
     gap: 2.4rem;
 }
 
-.left-side .title-section{
+.left-side .title-section {
     width: 30%
 }
 
-.left-side .title-section .title-more{
+.left-side .title-section .title-more {
     font-size: var(--mid-sz);
     border-bottom: solid 5px var(--second-color);
     font-weight: bold;
@@ -242,67 +239,79 @@ header {
 }
 
 
-.menu-list{
+.menu-list {
     gap: 2rem;
 }
 
-.menu-list li .link{
+.menu-list li .link {
     font-size: 2rem;
 }
 
 /*Bio */
 
-.bio{
+.bio {
     background-image: linear-gradient(180deg, #12121245 70%, #12121245 90%), url(https://supaservicos.github.io/chelsea-content/img/photos/IMG_2251.webp);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     gap: 2rem;
 }
-.bio .bio-text{
+
+.bio .bio-text {
     width: 60%;
 }
-.silver-icon{
+
+.silver-icon {
     width: 10rem;
 }
-.bio-text{
+
+.bio-text {
     font-size: var(--mid-sz);
     line-height: 31.99px;
     text-shadow: 0px 0px 10px #000;
 }
-.bio-content h1{
+
+.bio-content h1 {
     font-size: var(--big-sz);
     padding-bottom: 3rem;
 }
-.bio-img-container{
+
+.bio-img-container {
     width: 35rem;
 }
-.bio-section-content{
+
+.bio-section-content {
     width: 60%;
 }
-.bio-img-container img{
+
+.bio-img-container img {
     width: 100%;
 }
-.ms-list{
+
+.ms-list {
     list-style: disc;
     gap: 2rem;
     font-size: var(--mid-sz);
     padding-left: 2rem;
 }
-.ms-list li{
-   padding-bottom: 2rem; 
+
+.ms-list li {
+    padding-bottom: 2rem;
 }
-.contact-section{
+
+.contact-section {
     height: 70vh;
     padding: 5rem 10rem;
     scroll-snap-align: start;
 }
+
 /*Events*/
 
-.event-hero{
+.event-hero {
     background: var(--black-color);
     gap: 2rem;
 }
+
 /*Fotos*/
 .fotos-section {
     background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(34, 36, 36, 1) 100%), url('https://supaservicos.github.io/chelsea-content/img/photos/IMG_2268.webp');
@@ -324,7 +333,7 @@ header {
     cursor: pointer;
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform: scale(0.8);
-    
+
 }
 
 .swiper-slide-active {
@@ -351,8 +360,8 @@ header {
 
 
 
-/*Footer*/ 
-footer{
+/*Footer*/
+footer {
     height: 15rem;
     padding: 3rem 5rem;
     position: relative;
@@ -360,22 +369,27 @@ footer{
     scroll-snap-align: start;
 }
 
-footer section{
+footer section {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.social-links-area{
+
+.social-links-area {
     align-items: end;
 }
-.social-links{
+
+.social-links {
     gap: 1rem;
 }
-footer p{
+
+footer p {
     font-size: var(--small-sz);
 }
-.supas{
-   color:  rgba(36, 68, 255, 0.8);
-   font-family: "Montserrat", sans-serif;
+
+.supas {
+    color: rgba(36, 68, 255, 0.8);
+    font-family: "Montserrat", sans-serif;
 }
+

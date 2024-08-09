@@ -40,6 +40,7 @@
             </ul>
             <ul class="nav-link hide-mobile">
                 <a href="#" class="link">Conecte</a>
+
             </ul>
         </nav>
     </header>
@@ -53,10 +54,38 @@
                 Ouvir Agora
                 <ion-icon class="icon" name="arrow-round-forward"></ion-icon>
             </a>
-            <section class="menu-button hide-desktop">
-                <img class="silver-icon" src="https://supaservicos.github.io/chelsea-content/img/04.svg" alt=""
-                    srcset="" loading="lazy">
+
+            <section class="hide-desktop menu-mobile-section flex col f-center">
+                <a href="#" id="menu-icon" class="menu-button hide-desktop">
+                    <img class="silver-icon" src="https://supaservicos.github.io/chelsea-content/img/04.svg" alt=""
+                        loading="lazy">
+                </a>
+
+                <section class="menu-mobile hide-desktop flex col a-center" id="mobile-menu">
+                    <img width="100rem" src="https://supaservicos.github.io/chelsea-content/img/logo1.svg"
+                        alt="logo Chelsea Dinorath" loading="lazy">
+                    <nav class="md-menu">
+                        <ul class="menu-list flex col a-center">
+                            <li><a href="./bio.html" class="link">Bio</a></li>
+                            <li><a href="#lancamentos" class="link">Últimos Lançamentos</a></li>
+                            <li><a href="./events.html" class="link">Agenda</a></li>
+                            <li><a href="./error.html" class="link">Loja</a></li>
+                            <li><a href="./photos.html" class="link">Fotos</a></li>
+                            <li><a href="./error.html" class="link">Bookings</a></li>
+                            <li>
+                                <section class="social-links">
+                                    <a href=""><img src="./assets/img/icon/facebook-icon.svg" alt=""></a>
+                                    <a href=""><img src="./assets/img/icon/instagram-icon.svg" alt=""></a>
+                                    <a href=""><img src="./assets/img/icon/spotify-icon.svg" alt=""></a>
+                                    <a href=""><img src="./assets/img/icon/x-icon.svg" alt=""></a>
+                                    <a href=""><img src="./assets/img/icon/youtube-icon.svg" alt=""></a>
+                                </section>
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
             </section>
+
         </section>
 
         <!-- Lançamentos -->
@@ -142,8 +171,8 @@
                         <a href="https://onerpm.link/Catarse"
                             class="lancamento-card cr-border flex col big-card hide-mobile">
                             <video class="bg-video"
-                                src="https://supaservicos.github.io/chelsea-content/img/videos/Sodadi.webm" autoplay loop
-                                muted></video>
+                                src="https://supaservicos.github.io/chelsea-content/img/videos/Sodadi.webm" autoplay
+                                loop muted></video>
                             <div class="card-content">
                                 <h2 class="card-title">Sodadi</h2>
                                 <p class="card-link">Ouvir Agora
@@ -250,8 +279,8 @@
                 <a href="" class="stream-card big-card youtube-b">
                     <section class="card-img">
                         <video width="100%" class=""
-                                src="https://supaservicos.github.io/chelsea-content/img/videos/Sodadi.webm" autoplay loop
-                                muted></video>
+                            src="https://supaservicos.github.io/chelsea-content/img/videos/Sodadi.webm" autoplay loop
+                            muted></video>
                     </section>
                     <section class="card-info flex a-center">
                         <img loading="lazy" height="45rem"
@@ -262,8 +291,8 @@
                 <a href="" class="stream-card big-card applemusic-b">
                     <section class="card-img">
                         <video width="100%" class=""
-                                src="https://supaservicos.github.io/chelsea-content/img/videos/Ntima.webm" autoplay loop
-                                muted></video>
+                            src="https://supaservicos.github.io/chelsea-content/img/videos/Ntima.webm" autoplay loop
+                            muted></video>
                     </section>
                     <section class="card-info flex a-center">
                         <img loading="lazy" height="45rem"
@@ -274,8 +303,8 @@
                 <a href="" class="stream-card big-card spotify-b">
                     <section class="card-img">
                         <video width="100%" class=""
-                                src="https://supaservicos.github.io/chelsea-content/img/videos/Burn%20It.webm" autoplay loop
-                                muted></video>
+                            src="https://supaservicos.github.io/chelsea-content/img/videos/Burn%20It.webm" autoplay loop
+                            muted></video>
                     </section>
                     <section class="card-info flex a-center">
                         <img loading="lazy" height="45rem"
@@ -367,9 +396,6 @@
                         </li>
                     </ul>
                 </nav>
-                <sectio class="social-lin">
-
-                </sectio>
             </section>
         </section>
 
@@ -409,17 +435,17 @@
             centeredSlides: true,
             spaceBetween: 10,
             breakpoints: {
-            0:{
-                slidesPerView: 2,
-                spaceBetween: 65,
-            },
-            620:{
-                slidesPerView: 4
-            },
-            1024:{
-                slidesPerView: 5
-            },   
-    }
+                0: {
+                    slidesPerView: 2,
+                    spaceBetween: 65,
+                },
+                620: {
+                    slidesPerView: 4
+                },
+                1024: {
+                    slidesPerView: 5
+                },
+            }
         });
 
         function updateSlideClasses() {
@@ -430,7 +456,7 @@
                     slide.classList.add('active');
                 } else if (slide === swiper.slides[swiper.activeIndex - 1] || slide === swiper.slides[swiper.activeIndex + 1]) {
                     slide.classList.add('previous', 'next');
-                } 
+                }
             });
         }
 
@@ -443,6 +469,24 @@
         });
 
         updateSlideClasses();
+    </script>
+
+    <script>
+        const menuButton = document.getElementById('menu-icon');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Adicionar ou remover a classe 'show' para abrir e fechar o menu
+        menuButton.addEventListener('click', function (event) {
+            event.preventDefault(); // Evita o comportamento padrão do link
+            mobileMenu.classList.toggle('show');
+        });
+
+        // Fechar o menu ao clicar fora dele
+        document.addEventListener('click', function (event) {
+            if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
+                mobileMenu.classList.remove('show');
+            }
+        });
     </script>
 </body>
 
