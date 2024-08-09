@@ -113,7 +113,7 @@
 
     /*Fotos*/
     .swiper-slide.active {
-        transform: scale(1.2) translateX(-5.5rem);
+        transform: scale(1.2) translateX(-5.6rem);
     }
     .swiper-slide.active .photo-slide-img{
         width: 190%;
