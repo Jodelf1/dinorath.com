@@ -150,21 +150,11 @@
     border:solid 5px #1ED760;
 }
 .photo-card{
-    width: 35rem;
+    width: 30rem;
     height: 45rem;
 }
 .photo-slide-img{
     border:solid 5px transparent;
     border-top-color: var(--white-color);
     border-left-color: var(--white-color);
-}
-
-.premio-card{
-    overflow: hidden;
-    height: 35rem;
-    width: 35rem;
-}
-
-.premio-card .card-content{
-    top: 80%;
 }
