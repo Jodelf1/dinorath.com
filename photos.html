@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" ">
+    <title>Chelsea Dinorath | Fotos</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/objects.css">
+    <link rel="stylesheet" href="./assets/css/root.css">
+    <link rel="stylesheet" href="./assets/css/midiaQ.css">
+
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="flex a-center j-between">
+        <nav class="navbar flex a-center j-between">
+            <ul class="nav-link hide-mobile">
+                <a href="#lancamentos" class="link">Músicas</a>
+            </ul>
+            <ul class="nav-link hide-mobile">
+                <a href="videos.html" class="link">Vídeos</a>
+            </ul>
+            <ul class="nav-link">
+                <a href="/" class="logo-section">
+                    <img loading="" width="70rem" src="https://supaservicos.github.io/chelsea-content/img/logo2.svg"
+                        alt="logo Chelsea Dinorath" srcset="">
+                </a>
+            </ul>
+            <ul class="nav-link hide-mobile">
+                <a href="events.html" class="link">Agenda</a>
+            </ul>
+            <ul class="nav-link hide-mobile">
+                <a href="#" class="link">Conecte</a>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Fotos -->
+        <section class="swiper content fotos-section flex col j-center" id="fotos">
+            <section class="title-section">
+                <h2 class="title">Fotos</h2>
+            </section>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide photo-card" onclick="trocarFundo(this)">
+                        <img class="photo-slide-img" loading="lazy"
+                            src="https://supaservicos.github.io/chelsea-content/img/photos/IMG_2268.webp"
+                            alt="Chelsea Dinorath">
+                    </div>
+
+                    <div class="swiper-slide photo-card" onclick="trocarFundo(this)">
+                        <img class="photo-slide-img" loading="lazy"
+                            src="https://supaservicos.github.io/chelsea-content/img/photos/IMG_2252.webp"
+                            alt="Chelsea Dinorath">
+                    </div>
+
+                    <div class="swiper-slide photo-card" onclick="trocarFundo(this)">
+                        <img class="photo-slide-img" loading="lazy"
+                            src="https://supaservicos.github.io/chelsea-content/img/photos/IMG_2249.webp"
+                            alt="Chelsea Dinorath">
+                    </div>
+
+                    <div class="swiper-slide photo-card" onclick="trocarFundo(this)">
+                        <img class="photo-slide-img" loading="lazy"
+                            src="https://supaservicos.github.io/chelsea-content/img/photos/IMG_2264.webp"
+                            alt="Chelsea Dinorath">
+                    </div>
+
+                    <div class="swiper-slide photo-card" onclick="trocarFundo(this)">
+                        <img class="photo-slide-img" loading="lazy"
+                            src="https://supaservicos.github.io/chelsea-content/img/photos/IMG_2250.webp"
+                            alt="Chelsea Dinorath">
+                    </div>
+
+                    <div class="swiper-slide photo-card" onclick="trocarFundo(this)">
+                        <img class="photo-slide-img" loading="lazy"
+                            src="https://supaservicos.github.io/chelsea-content/img/photos/IMG_2258.webp"
+                            alt="Chelsea Dinorath">
+                    </div>
+
+                    <div class="swiper-slide photo-card" onclick="trocarFundo(this)">
+                        <img class="photo-slide-img" loading="lazy"
+                            src="https://supaservicos.github.io/chelsea-content/img/photos/IMG_2264.webp"
+                            alt="Chelsea Dinorath">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- Footer -->
+    <footer class="flex row j-between">
+        <section>
+            <p>© Chelsea Dinorath 2024 Todos os direitos reservados.</p>
+            <p>Developed by <a href="" class="supas">Supa Serviços</a></p>
+        </section>
+        <section>
+            <P>Siga-me</P>
+            <section class="social-links flex row a-center">
+                <a href=""><img width="20rem" src="./assets/img/icon/facebook-icon.svg" alt=""></a>
+                <a href=""><img width="20rem" src="./assets/img/icon/instagram-icon.svg" alt=""></a>
+                <a href=""><img width="20rem" src="./assets/img/icon/spotify-icon.svg" alt=""></a>
+                <a href=""><img width="20rem" src="./assets/img/icon/x-icon.svg" alt=""></a>
+                <a href=""><img width="20rem" src="./assets/img/icon/youtube-icon.svg" alt=""></a>
+            </section>
+        </section>
+    </footer>
+    <!-- Script -->
+    <script src="./assets/js/index.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        function trocarFundo(elemento) {
+            const fotos = document.getElementById('fotos');
+            const img = elemento.querySelector('img');
+            if (img) {
+                const imagemUrl = img.src;
+                fotos.style.backgroundImage = `radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(34,36,36,1) 100%), url(${imagemUrl})`;
+                fotos.style.backgroundSize = 'cover';
+            }
+        }
+
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 5,
+            centeredSlides: true,
+            spaceBetween: 10,
+        });
+
+        function updateSlideClasses() {
+            const slides = document.querySelectorAll('.swiper-slide');
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active', 'previous', 'next');
+                if (slide === swiper.slides[swiper.activeIndex]) {
+                    slide.classList.add('active');
+                } else if (slide === swiper.slides[swiper.activeIndex - 1] || slide === swiper.slides[swiper.activeIndex + 1]) {
+                    slide.classList.add('previous', 'next');
+                }
+            });
+        }
+
+        swiper.on('slideChange', updateSlideClasses);
+
+        document.querySelectorAll('.swiper-slide').forEach(slide => {
+            slide.addEventListener('click', () => {
+                swiper.slideTo(swiper.slides.indexOf(slide));
+            });
+        });
+
+        updateSlideClasses();
+    </script>
+</body>
+
+</html>

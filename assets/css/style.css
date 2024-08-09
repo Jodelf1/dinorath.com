@@ -35,6 +35,7 @@ header {
     padding: 2rem 10rem;
     width: 100%;
     position: absolute;
+    z-index: 99999;
 }
 
 .navbar {
@@ -73,7 +74,7 @@ header {
 .lancamento-card{
     overflow: hidden;
     position: relative;
-    top:-10%
+    top:-2rem;
 }
 
 .bg-video {
@@ -259,7 +260,7 @@ header {
     background-image: linear-gradient(180deg, #12121245 70%, #12121245 90%), url(https://supaservicos.github.io/chelsea-content/img/photos/IMG_2251.webp);
     background-size: cover;
     background-position: center;
-    background-attachment: local;
+    background-attachment: fixed;
     gap: 2rem;
 }
 .bio .bio-text{
