@@ -102,6 +102,10 @@ header {
     gap: 0 2.4rem;
 }
 
+.slide-cards{
+    /* background-color: red; */
+}
+
 .slide-cards .conjunto,
 .premio {
     display: none;
@@ -110,6 +114,11 @@ header {
 .slide-cards .conjunto.active,
 .premio.active {
     display: flex;
+}
+
+.premio-container{
+    margin-top: -10%;
+    gap: 1.6rem;
 }
 
 /* Vídeo */
@@ -320,6 +329,7 @@ header {
 
 .swiper-wrapper {
     height: 45rem;
+    padding: 0 0 0 40%;
 }
 
 .swiper-slide {
@@ -340,13 +350,11 @@ header {
 }
 
 .photo-slide-img {
-    width: 100%;
-    height: 100%;
+    width: 25rem;
+    height: 40rem;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
-
-
 
 .swiper-slide.previous,
 .swiper-slide.next {
