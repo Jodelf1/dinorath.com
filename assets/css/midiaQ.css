@@ -1,5 +1,5 @@
 /* Desktop */
-@media screen and (min-width: 601px){
+@media screen and (min-width: 601px) {
     .hide-desktop {
         display: none;
         overflow: hidden;
@@ -7,14 +7,16 @@
 }
 
 /* Mobile */
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
     .hide-mobile {
         display: none;
         overflow: hidden;
     }
-    .content{
+
+    .content {
         padding: 5rem 2.5rem;
     }
+
     header {
         padding: 2rem 2rem;
         width: 100%;
@@ -23,72 +25,88 @@
         justify-content: center;
         align-items: center;
     }
+
     .body::-webkit-scrollbar {
         display: none;
         width: 0;
         height: 0;
     }
-    .navbar{
+
+    .navbar {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .song-img-hero{
+
+    .song-img-hero {
         width: 25rem;
     }
- 
-    .video-card img{
+
+    .video-card img {
         width: 35rem;
         height: auto;
     }
-    .mais-dinorath-section{
+
+    .mais-dinorath-section {
         align-items: center;
         justify-content: center;
     }
+
     /*Bio*/
-    .bio-text{
+    .bio-text {
         font-size: var(--small-sz);
         line-height: 23.99px;
     }
-    .bio .bio-text{
+
+    .bio .bio-text {
         width: 100%;
     }
-    .silver-icon{
+
+    .silver-icon {
         width: 8rem;
     }
-    .bio-content{
+
+    .bio-content {
         flex-direction: column-reverse;
         height: auto;
     }
-    .bio-content h1{
+
+    .bio-content h1 {
         font-size: var(--mid-sz);
         padding: 2rem 0;
     }
-    .bio-content:nth-child(3), .bio-content:last-child{
+
+    .bio-content:nth-child(3),
+    .bio-content:last-child {
         flex-direction: column;
     }
-    .bio-section-content{
+
+    .bio-section-content {
         width: 90%;
     }
-    .ms-list{
+
+    .ms-list {
         font-size: var(--small-sz);
         padding-left: 2rem;
     }
-    .ms-list li{
-        padding-bottom: 1rem; 
-     }
-     .contact-section{
+
+    .ms-list li {
+        padding-bottom: 1rem;
+    }
+
+    .contact-section {
         height: 90vh;
     }
 
     /*Footer*/
-    .footer-section{
+    .footer-section {
         flex-direction: column-reverse;
         padding: 1.5rem 2.5rem;
         gap: 1rem;
     }
-    .social-links-area{
+
+    .social-links-area {
         align-items: start;
         gap: 1rem;
     }
