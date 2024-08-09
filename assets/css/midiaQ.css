@@ -110,4 +110,13 @@
         align-items: start;
         gap: 1rem;
     }
+
+    /*Fotos*/
+    .swiper-slide.active {
+        transform: scale(1.2) translateX(-5.5rem);
+    }
+    .swiper-slide.active .photo-slide-img{
+        width: 190%;
+    }
+    
 }

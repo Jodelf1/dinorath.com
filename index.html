@@ -406,9 +406,20 @@
         }
 
         const swiper = new Swiper('.swiper-container', {
-            slidesPerView: 5,
             centeredSlides: true,
             spaceBetween: 10,
+            breakpoints: {
+            0:{
+                slidesPerView: 2,
+                spaceBetween: 65,
+            },
+            620:{
+                slidesPerView: 4
+            },
+            1024:{
+                slidesPerView: 5
+            },   
+    }
         });
 
         function updateSlideClasses() {
