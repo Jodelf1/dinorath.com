@@ -58,122 +58,121 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel(activeIndex);
 });
 
-    // Lançamentos
-    document.addEventListener('DOMContentLoaded', () => {
-        const prevArrow = document.querySelector('.prev-arrow');
-        const nextArrow = document.querySelector('.next-arrow');
-        const conjuntos = document.querySelectorAll('.conjunto');
-    
-        let currentIndex = 0;
-        let startX = 0;
-        let endX = 0;
-    
-        function updateCarousel() {
-            conjuntos.forEach((conjunto, index) => {
-                conjunto.classList.toggle('active', index === currentIndex);
-            });
-        }
-    
-        prevArrow.addEventListener('click', (e) => {
-            e.preventDefault();
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : conjuntos.length - 1;
-            updateCarousel();
+// Lançamentos
+document.addEventListener('DOMContentLoaded', () => {
+    const prevArrow = document.querySelector('.prev-arrow');
+    const nextArrow = document.querySelector('.next-arrow');
+    const conjuntos = document.querySelectorAll('.conjunto');
+
+    let currentIndex = 0;
+    let startX = 0;
+    let endX = 0;
+
+    function updateCarousel() {
+        conjuntos.forEach((conjunto, index) => {
+            conjunto.classList.toggle('active', index === currentIndex);
         });
-    
-        nextArrow.addEventListener('click', (e) => {
-            e.preventDefault();
-            currentIndex = (currentIndex < conjuntos.length - 1) ? currentIndex + 1 : 0;
-            updateCarousel();
-        });
-    
-        // Adiciona eventos de toque
-        document.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-        });
-    
-        document.addEventListener('touchmove', (e) => {
-            endX = e.touches[0].clientX;
-        });
-    
-        document.addEventListener('touchend', () => {
-            if (startX > endX + 50) {
-                // Deslizou para a esquerda
-                currentIndex = (currentIndex < conjuntos.length - 1) ? currentIndex + 1 : 0;
-            } else if (startX < endX - 50) {
-                // Deslizou para a direita
-                currentIndex = (currentIndex > 0) ? currentIndex - 1 : conjuntos.length - 1;
-            }
-            updateCarousel();
-        });
-    
-        // Inicializa o carrossel
+    }
+
+    prevArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : conjuntos.length - 1;
         updateCarousel();
     });
 
+    nextArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentIndex = (currentIndex < conjuntos.length - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    });
 
+    // Adiciona eventos de toque
+    document.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
 
-    // premios
-    document.addEventListener('DOMContentLoaded', () => {
-        const prevArrow = document.querySelector('.prev-p');
-        const nextArrow = document.querySelector('.next-p');
-        const conjuntos = document.querySelectorAll('.premio');
+    document.addEventListener('touchmove', (e) => {
+        endX = e.touches[0].clientX;
+    });
 
-        let currentIndex = 0;
-
-        function updateCarouselP() {
-            conjuntos.forEach((conjunto, index) => {
-                conjunto.classList.toggle('active', index === currentIndex);
-            });
-        }
-
-        prevArrow.addEventListener('click', (e) => {
-            e.preventDefault();
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : conjuntos.length - 1;
-            updateCarouselP();
-        });
-
-        nextArrow.addEventListener('click', (e) => {
-            e.preventDefault();
+    document.addEventListener('touchend', () => {
+        if (startX > endX + 50) {
+            // Deslizou para a esquerda
             currentIndex = (currentIndex < conjuntos.length - 1) ? currentIndex + 1 : 0;
-            updateCarouselP();
-        });
+        } else if (startX < endX - 50) {
+            // Deslizou para a direita
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : conjuntos.length - 1;
+        }
+        updateCarousel();
+    });
 
-        // Adiciona eventos de toque
-        document.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-        });
-    
-        document.addEventListener('touchmove', (e) => {
-            endX = e.touches[0].clientX;
-        });
-    
-        document.addEventListener('touchend', () => {
-            if (startX > endX + 50) {
-                // Deslizou para a esquerda
-                currentIndex = (currentIndex < conjuntos.length - 1) ? currentIndex + 1 : 0;
-            } else if (startX < endX - 50) {
-                // Deslizou para a direita
-                currentIndex = (currentIndex > 0) ? currentIndex - 1 : conjuntos.length - 1;
-            }
-            updateCarouselP();
-        });
+    // Inicializa o carrossel
+    updateCarousel();
+});
 
-        // Inicializa o carrossel
+
+
+// premios
+document.addEventListener('DOMContentLoaded', () => {
+    const prevArrow = document.querySelector('.prev-p');
+    const nextArrow = document.querySelector('.next-p');
+    const conjuntos = document.querySelectorAll('.premio');
+
+    let currentIndex = 0;
+
+    function updateCarouselP() {
+        conjuntos.forEach((conjunto, index) => {
+            conjunto.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    prevArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : conjuntos.length - 1;
         updateCarouselP();
     });
 
+    nextArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentIndex = (currentIndex < conjuntos.length - 1) ? currentIndex + 1 : 0;
+        updateCarouselP();
+    });
+
+    // Adiciona eventos de toque
+    document.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    document.addEventListener('touchmove', (e) => {
+        endX = e.touches[0].clientX;
+    });
+
+    document.addEventListener('touchend', () => {
+        if (startX > endX + 50) {
+            // Deslizou para a esquerda
+            currentIndex = (currentIndex < conjuntos.length - 1) ? currentIndex + 1 : 0;
+        } else if (startX < endX - 50) {
+            // Deslizou para a direita
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : conjuntos.length - 1;
+        }
+        updateCarouselP();
+    });
+
+    // Inicializa o carrossel
+    updateCarouselP();
+});
 
 
 
-    // Ajuste na viewport
-    function setVh() {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-    
-    // Execute na carga da página
-    setVh();
-    
-    // Atualize ao redimensionar a janela
-    window.addEventListener('resize', setVh);
-    
+
+// Ajuste na viewport
+function setVh() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+// Execute na carga da página
+setVh();
+
+// Atualize ao redimensionar a janela
+window.addEventListener('resize', setVh);
