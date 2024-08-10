@@ -1,10 +1,11 @@
-// Videos
 document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.video-card');
     const dots = document.querySelectorAll('.dot');
     const backgroundVideo = document.getElementById('background-video');
 
     let activeIndex = 0;
+    let startX = 0;
+    let endX = 0;
 
     function updateCarousel(index) {
         cards.forEach((card, i) => {
@@ -16,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Transição suave da opacidade
         backgroundVideo.style.opacity = 0; // Tornar o vídeo atual invisível
-        // backgroundVideo.style.display = none;
         setTimeout(() => {
             const bgVideo = cards[index].dataset.bg;
             backgroundVideo.src = bgVideo;
@@ -34,6 +34,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Adiciona eventos de toque
+    document.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    document.addEventListener('touchmove', (e) => {
+        endX = e.touches[0].clientX;
+    });
+
+    document.addEventListener('touchend', () => {
+        if (startX > endX + 50) {
+            // Deslizou para a esquerda
+            activeIndex = (activeIndex < cards.length - 1) ? activeIndex + 1 : 0;
+        } else if (startX < endX - 50) {
+            // Deslizou para a direita
+            activeIndex = (activeIndex > 0) ? activeIndex - 1 : cards.length - 1;
+        }
+        updateCarousel(activeIndex);
+    });
+
     // Inicializa o carrossel
     updateCarousel(activeIndex);
 });
@@ -45,6 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const conjuntos = document.querySelectorAll('.conjunto');
 
     let currentIndex = 0;
+    let startX = 0;
+    let endX = 0;
 
     function updateCarousel() {
         conjuntos.forEach((conjunto, index) => {
@@ -61,6 +83,26 @@ document.addEventListener('DOMContentLoaded', () => {
     nextArrow.addEventListener('click', (e) => {
         e.preventDefault();
         currentIndex = (currentIndex < conjuntos.length - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    });
+
+    // Adiciona eventos de toque
+    document.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    document.addEventListener('touchmove', (e) => {
+        endX = e.touches[0].clientX;
+    });
+
+    document.addEventListener('touchend', () => {
+        if (startX > endX + 50) {
+            // Deslizou para a esquerda
+            currentIndex = (currentIndex < conjuntos.length - 1) ? currentIndex + 1 : 0;
+        } else if (startX < endX - 50) {
+            // Deslizou para a direita
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : conjuntos.length - 1;
+        }
         updateCarousel();
     });
 
@@ -96,6 +138,26 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCarouselP();
     });
 
+    // Adiciona eventos de toque
+    document.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    document.addEventListener('touchmove', (e) => {
+        endX = e.touches[0].clientX;
+    });
+
+    document.addEventListener('touchend', () => {
+        if (startX > endX + 50) {
+            // Deslizou para a esquerda
+            currentIndex = (currentIndex < conjuntos.length - 1) ? currentIndex + 1 : 0;
+        } else if (startX < endX - 50) {
+            // Deslizou para a direita
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : conjuntos.length - 1;
+        }
+        updateCarouselP();
+    });
+
     // Inicializa o carrossel
     updateCarouselP();
 });
@@ -107,11 +169,10 @@ document.addEventListener('DOMContentLoaded', () => {
 function setVh() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
-  }
-  
-  // Execute na carga da página
-  setVh();
-  
-  // Atualize ao redimensionar a janela
-  window.addEventListener('resize', setVh);
-  
+}
+
+// Execute na carga da página
+setVh();
+
+// Atualize ao redimensionar a janela
+window.addEventListener('resize', setVh);
