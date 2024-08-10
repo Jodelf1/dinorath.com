@@ -65,6 +65,7 @@
     padding: 5rem 10rem;
     height: calc(var(--vh, 1vh) * 100);
     scroll-snap-align: start;
+    scroll-snap-stop: normal; 
 }
 
 .over-hidden{
