@@ -46,37 +46,37 @@
     </header>
     <!-- Main Content -->
     <main class="container">
+
+        <section class="hide-desktop menu-mobile-section flex col f-center">
+    
+            <a href="#" id="menu-icon" class="menu-button hide-desktop">
+                <img class="silver-icon" src="./content/04.svg" alt="Menu" loading="lazy">
+            </a>
+    
+            <section class="menu-mobile hide-desktop flex col a-center" id="mobile-menu">
+                <img width="100rem" src="./content/logo1.svg" alt="logo Chelsea Dinorath" loading="lazy">
+                <nav class="md-menu">
+                    <ul class="menu-list flex col a-center">
+                        <li><a href="./bio.html" class="link">Bio</a></li>
+                        <li><a href="#lancamentos" class="link">Últimos Lançamentos</a></li>
+                        <li><a href="./events.html" class="link">Agenda</a></li>
+                        <li><a href="./error.html" class="link">Loja</a></li>
+                        <li><a href="./photos.html" class="link">Fotos</a></li>
+                        <li><a href="./error.html" class="link">Bookings</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </section>
+
         <!-- Hero Section -->
         <section class="hero-section content flex col f-center">
             <img width="400rem" src="./content/icons/TITLE.svg" alt=""
+
                 srcset="" class="song-img-hero" loading="lazy">
             <a class="btn" href="https://onerpm.link/burnit">
                 Ouvir Agora
                 <ion-icon class="icon" name="arrow-round-forward"></ion-icon>
             </a>
-
-            <section class="hide-desktop menu-mobile-section flex col f-center">
-                <a href="#" id="menu-icon" class="menu-button hide-desktop">
-                    <img class="silver-icon" src="./content/04.svg" alt=""
-                        loading="lazy">
-                </a>
-
-                <section class="menu-mobile hide-desktop flex col a-center" id="mobile-menu">
-                    <img width="100rem" src="./content/logo1.svg"
-                        alt="logo Chelsea Dinorath" loading="lazy">
-                    <nav class="md-menu">
-                        <ul class="menu-list flex col a-center">
-                            <li><a href="./bio.html" class="link">Bio</a></li>
-                            <li><a href="#lancamentos" class="link">Últimos Lançamentos</a></li>
-                            <li><a href="./events.html" class="link">Agenda</a></li>
-                            <li><a href="./error.html" class="link">Loja</a></li>
-                            <li><a href="./photos.html" class="link">Fotos</a></li>
-                            <li><a href="./error.html" class="link">Bookings</a></li>
-                        </ul>
-                    </nav>
-                </section>
-            </section>
-
         </section>
 
         <!-- Lançamentos -->
@@ -205,7 +205,7 @@
         </section>
 
         <!-- Videos -->
-        <section class="videos-section flex col content">
+        <section class="videos-section flex col content" id="videos-section">
             <video id="background-video" autoplay loop muted></video>
             <section class="title-section">
                 <h2 class="title">Vídeos</h2>
@@ -399,7 +399,7 @@
             </div>
         </section>
 
-        <section class="mais-dinorath-section flex row">
+        <section class="mais-dinorath-section flex row hide-mobile">
             <section class="left-side hide-mobile">
                 <section class="title-section">
                     <h2 class="title-more">Mais Dinorath</h2>
@@ -432,7 +432,7 @@
 
     </main>
     <!-- Footer -->
-    <footer class="flex row j-between">
+    <footer class="flex row j-between footer-section">
         <section>
             <p>© Chelsea Dinorath 2024 Todos os direitos reservados.</p>
             <p>Developed by <a href="" class="supas">Supa Serviços</a></p>
@@ -512,13 +512,13 @@
             mobileMenu.classList.toggle('show');
         });
 
-        // Fechar o menu ao clicar fora dele
         document.addEventListener('click', function (event) {
             if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
                 mobileMenu.classList.remove('show');
             }
         });
     </script>
+
 </body>
 
 </html>
