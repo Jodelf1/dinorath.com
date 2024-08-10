@@ -25,8 +25,8 @@
         justify-content: center;
         align-items: center;
     }
-
-    .body::-webkit-scrollbar {
+    
+    body::-webkit-scrollbar {
         display: none;
         width: 0;
         height: 0;
@@ -149,10 +149,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 100;
     gap: 2.4rem;
 }
 
 .menu-mobile.show {
     display: flex; /* Só é exibido ao adicionar a classe 'show' */
 }
+
+/* HTML: <div class="loader"></div> */
+
