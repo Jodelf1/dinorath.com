@@ -84,10 +84,11 @@
 
 .cards-arrow{
     position: relative;
-    top: 40%;
+    top: 50%;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    z-index: 100;
 }
 
 .cards-arrow .slide-arrow{
@@ -157,4 +158,28 @@
     border:solid 5px transparent;
     border-top-color: var(--white-color);
     border-left-color: var(--white-color);
+}
+
+
+/* Premios */
+.premio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10rem;
+    gap: 2.4rem;
+}
+
+.premio-card{
+    overflow: hidden;
+    width: 30rem;
+    height: 30rem;
+}
+
+.premio-bg{
+    height: 100%;
+}
+
+.premio-info{
+    top: 80%;
 }
