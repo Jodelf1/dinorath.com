@@ -1,4 +1,6 @@
 :root {
+    --vh: 100%;
+
     /* COLOURS */
     --primary-color: #CA3110;
     --second-color: #F1920A;
@@ -61,7 +63,7 @@
 
 .content{
     padding: 5rem 10rem;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     scroll-snap-align: start;
 }
 
