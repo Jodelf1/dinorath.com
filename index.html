@@ -480,21 +480,34 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-        const video = document.querySelector('video');
+            const video = document.querySelector('video');
 
-        // Evita a pausa do vídeo
-        video.addEventListener('pause', () => {
-        video.play();
+            // Evita a pausa do vídeo
+            video.addEventListener('pause', () => {
+                video.play();
+            });
+
+            // Impede que o vídeo entre em tela cheia
+            video.addEventListener('webkitbeginfullscreen', (e) => {
+                e.preventDefault();
+            });
+
+            // Reproduz automaticamente o vídeo ao carregá-lo
+            video.play();
         });
 
-        // Impede que o vídeo entre em tela cheia
-        video.addEventListener('webkitbeginfullscreen', (e) => {
-        e.preventDefault();
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.querySelector('video');
+
+            // Tentar reproduzir o vídeo sem som para evitar bloqueio
+            video.muted = true;
+            video.play().then(() => {
+                video.muted = false; // Reativa o som se desejado
+            }).catch(() => {
+                console.log('Autoplay bloqueado.');
+            });
         });
 
-        // Reproduz automaticamente o vídeo ao carregá-lo
-        video.play();
-        });
     </script>
 
 </body>

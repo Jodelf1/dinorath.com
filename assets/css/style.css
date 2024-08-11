@@ -409,10 +409,11 @@ footer p {
 }
 
 video {
-    width: 100%;
-    height: auto;
     pointer-events: none; /* Impede todas as interações do usuário com o vídeo */
     user-select: none; /* Impede a seleção de texto/imagens */
     -webkit-touch-callout: none; /* Evita o menu de toque no iOS */
     -webkit-user-select: none; /* Evita a seleção de texto/imagens no iOS */
+    pointer-events: none; /* Bloqueia interação com o vídeo */
+    user-select: none;
 }
+
