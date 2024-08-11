@@ -309,9 +309,11 @@ header {
     gap: 3rem;
     padding: 2rem;
     color: white;
-    text-align: center;
 }
 
+.swiper-container{
+    margin: auto 0;
+}
 .swiper-wrapper {
     height: 45rem;
 }
@@ -380,8 +382,6 @@ footer p {
     color: rgba(36, 68, 255, 0.8);
     font-family: "Montserrat", sans-serif;
 }
-
-
 
 
 .slide-cards .conjunto,
