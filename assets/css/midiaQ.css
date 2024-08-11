@@ -171,7 +171,7 @@
     position: relative;
 }
 
-
+/* Menu Mobile */
 .menu-mobile {
     position: fixed;
     top: 0;
@@ -188,7 +188,7 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(100vh);
-    transition: opacity 0.9s, visibility 0.5s, transform 0.6s;
+    transition: opacity 0.9s ease, visibility 0.5s ease, transform 0.6s ease;
 }
 
 .menu-mobile.show {
@@ -196,6 +196,18 @@
     visibility: visible;
     transform: translateY(0);
 }
+
+.menu-mobile {
+    -webkit-transform: translateY(100vh);
+    -webkit-transition: opacity 0.9s ease, visibility 0.5s ease, -webkit-transform 0.6s ease;
+    transition: opacity 0.9s ease, visibility 0.5s ease, transform 0.6s ease;
+}
+
+.menu-mobile.show {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
 
 video {
     width: 100%;
@@ -217,5 +229,3 @@ video::-ms-media-controls {
 video::-o-media-controls {
     display: none !important;
 }
-
-
