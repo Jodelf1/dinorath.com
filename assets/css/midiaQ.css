@@ -117,10 +117,16 @@
     .swiper-slide.active {
         transform: scale(1.2) translateX(-5.6rem);
     }
-    .swiper-slide.active .photo-slide-img{
+
+    .swiper-slide.active .photo-slide-img {
         width: 190%;
     }
-    
+
+
+    .card-navgator {
+        margin-top: -15rem;
+    }
+
 }
 
 .menu-mobile-section {
@@ -129,34 +135,36 @@
 
 .menu-button {
     position: fixed;
-    z-index: 1001; 
+    z-index: 1001;
     border-radius: 50%;
     padding: 1rem;
     bottom: 2rem;
     border: 0.01rem solid var(--second-color);
     background: #00000025;
     backdrop-filter: blur(3px);
-    animation: float 5s ease-in-out infinite; 
-  }
+    animation: float 5s ease-in-out infinite;
+}
 
-  @keyframes float {
+@keyframes float {
     0% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
-    50% {
-      transform: translateY(-5px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
 
-   .menu-button.fixed-position {
-      bottom: 2rem; 
-      right: 2rem; 
-      left: auto;
-      transform: none; 
+    50% {
+        transform: translateY(-5px);
     }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.menu-button.fixed-position {
+    bottom: 2rem;
+    right: 2rem;
+    left: auto;
+    transform: none;
+}
 
 .menu-button .silver-icon {
     width: 5rem;
@@ -165,12 +173,12 @@
 
 
 .menu-mobile {
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.9); 
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -185,8 +193,6 @@
 
 .menu-mobile.show {
     opacity: 1;
-    visibility: visible; 
+    visibility: visible;
     transform: translateY(0);
 }
-
-
