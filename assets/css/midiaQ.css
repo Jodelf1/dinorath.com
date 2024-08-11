@@ -196,3 +196,24 @@
     visibility: visible;
     transform: translateY(0);
 }
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+video::-webkit-media-controls {
+    display: none !important;
+}
+
+video::-moz-media-controls {
+    display: none !important;
+}
+
+video::-ms-media-controls {
+    display: none !important;
+}
+
+video::-o-media-controls {
+    display: none !important;
+}
