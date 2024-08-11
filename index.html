@@ -479,22 +479,24 @@
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const video = document.querySelector('video');
+document.addEventListener('DOMContentLoaded', () => {
+    const videos = document.querySelectorAll('video');
 
-            // Evita a pausa do vídeo
-            video.addEventListener('pause', () => {
-                video.play();
-            });
-
-            // Impede que o vídeo entre em tela cheia
-            video.addEventListener('webkitbeginfullscreen', (e) => {
-                e.preventDefault();
-            });
-
-            // Reproduz automaticamente o vídeo ao carregá-lo
+    videos.forEach(video => {
+        // Impede que o vídeo seja pausado
+        video.addEventListener('pause', (e) => {
             video.play();
         });
+
+        // Impede que o vídeo entre em tela cheia
+        video.addEventListener('webkitfullscreenchange', (e) => {
+            if (document.webkitIsFullScreen) {
+                document.webkitExitFullscreen();
+            }
+        });
+    });
+});
+
 
         document.addEventListener('DOMContentLoaded', () => {
             const video = document.querySelector('video');

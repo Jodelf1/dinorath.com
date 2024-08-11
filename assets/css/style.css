@@ -417,3 +417,15 @@ video {
     user-select: none;
 }
 
+video {
+    pointer-events: none; /* Desativa a interação direta com o vídeo */
+}
+
+video::-webkit-media-controls {
+    display: none !important; /* Esconde os controles de mídia no Safari */
+}
+
+video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
