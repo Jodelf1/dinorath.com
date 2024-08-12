@@ -127,6 +127,27 @@
         margin-top: -15rem;
     }
 
+    /* Contact Form */
+    form{
+        gap: 1.6rem;
+        width: 70%;
+    }
+
+    .form-input{
+        width: 100%;
+    }
+
+    input,
+    textarea {
+        outline: none;
+        background-color: transparent;
+        border: solid 1px transparent;
+        color: var(--white-color);
+        padding: 0.5rem;
+        width: 100%;
+        font-size: var(--small-sz);
+        min-height: 3rem;
+    }
 }
 
 .menu-mobile-section {
@@ -209,6 +230,8 @@
     transform: translateY(0);
 }
 
+
+/* Contact from */
 
 video {
     width: 100%;

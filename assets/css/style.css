@@ -429,3 +429,99 @@ video::-webkit-media-controls-enclosure {
     display: none !important;
 }
 
+/* Contact Form */
+.contactForm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    gap: 2.4rem;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    overflow: hidden;
+    transform: translateY(100vh);
+    transition: opacity 0.9s ease, visibility 0.5s ease, transform 0.6s ease;
+}
+
+.contactForm.show {
+    opacity: 1;
+    display: flex;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#contactClose {
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+    font-size: var(--small-sz);
+}
+
+form{
+    gap: 1.6rem;
+}
+
+button{
+    background-color: transparent;
+}
+
+input,
+textarea{
+    outline: none;
+    background-color: transparent;
+    border: solid 1px transparent;
+    color: var(--white-color);
+    padding: 0.5rem;
+    width: 100%;
+    font-size: var(--small-sz);
+    min-height: 3rem;
+}
+
+.form-input{
+    width: 25rem;
+    gap: 0.5rem;
+}
+
+.form-input label{
+    font-size: var(--small-sz);
+}
+
+.input {
+    transition: border-bottom-color 0.3s ease-in-out;
+    border-bottom: 2px solid #353535; /* Cor padrão */
+}
+
+.input.error {
+    border-bottom-color: red; /* Cor para erro */
+}
+
+.input.valid {
+    border-bottom-color: var(--primary-color); /* Cor para quando o campo está correto */
+}
+
+
+.form-input textarea{
+    border-color: #353535;
+    height: 15rem;
+    resize: none;
+}
+
+.phone-input-container{
+    gap: 1rem;
+}
+
+.phone-indicative{
+    width: 30%;
+    border: 1px solid #353535;
+}
+
+.phone-number {
+    width: 70%;
+}

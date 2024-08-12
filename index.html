@@ -38,8 +38,7 @@
                 <a href="events.html" class="link">Agenda</a>
             </ul>
             <ul class="nav-link hide-mobile">
-                <a href="#" class="link">Conecte</a>
-
+                <a id="contactBtn" href="#" class="contact-button link">Contato</a>
             </ul>
         </nav>
     </header>
@@ -61,10 +60,38 @@
                         <li><a href="./events.html" class="link">Agenda</a></li>
                         <li><a href="./error.html" class="link">Loja</a></li>
                         <li><a href="./photos.html" class="link">Fotos</a></li>
+                        <li><a id="contactBtn" href="#" class="contact-button link">Contato</a></li>
                         <li><a href="./error.html" class="link">Bookings</a></li>
                     </ul>
                 </nav>
             </section>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contactForm flex col a-center" id="contactForm">
+            <a id="contactClose" href="#" class="hide-mobile link">Fechar</a>
+            <img width="80rem" src="./content/04.svg" alt="logo Chelsea Dinorath" loading="lazy">
+            <form class="contact-form flex col" action="">
+                <div class="form-input flex col">
+                    <label for="">Nome</label>
+                    <input class="input" type="name" placeholder="Nome Sobrenome">
+                </div>
+                <div class="form-input flex col">
+                    <label for="phone">Telefone</label>
+                    <div class="phone-input-container flex">
+                        <input class="phone-indicative" type="text" placeholder="+244">
+                        <input class="phone-number input" type="text" placeholder="123456789">
+                    </div>
+                </div>                
+                <div class="form-input flex col">
+                    <label for="">E-Mail</label>
+                    <input class="input" type="email" placeholder="seuemail@exemplo.com">
+                </div>
+                <div class="form-input">
+                    <textarea name="" id="" placeholder="Escreva aqui a sua mensagem..."></textarea>
+                </div>
+                <button class="btn" type="submit">Enviar</button>
+            </form>
         </section>
 
         <!-- Hero Section -->
@@ -384,7 +411,7 @@
                         <li><a href="./events.html" class="link">Agenda</a></li>
                         <li><a href="./error.html" class="link">Loja</a></li>
                         <li><a href="./photos.html" class="link">Fotos</a></li>
-                        <li><a href="./error.html" class="link">Bookings</a></li>
+                        <li><a id="contactBtn" href="#" class="contact-button link">Contato</a></li>
                         <li>
                             <section class="social-links flex row a-center">
                                 <a href=""><img width="20rem" src="./assets/img/icon/facebook-icon.svg" alt=""></a>
@@ -475,12 +502,19 @@
         document.addEventListener('DOMContentLoaded', function () {
             const menuButton = document.getElementById('menu-icon');
             const mobileMenu = document.getElementById('mobile-menu');
+            const contactForm = document.getElementById('contactForm');
 
             // Adicionar ou remover a classe 'show' para abrir e fechar o menu
             menuButton.addEventListener('click', function (event) {
                 event.preventDefault(); // Evita o comportamento padrão do link
                 mobileMenu.classList.toggle('show');
             });
+
+            contactForm.addEventListener('click', function (event) {
+                event.preventDefault(); 
+                mobileMenu.classList.remove('show');
+            });
+
 
             // Fechar o menu ao clicar fora dele
             document.addEventListener('click', function (event) {
@@ -493,6 +527,37 @@
                 }
             });
         });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactButtons = document.querySelectorAll('.contact-button');
+            const contactClose = document.getElementById('contactClose');
+            const contactForm = document.getElementById('contactForm');
+
+            contactButtons.forEach(button => {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    contactForm.classList.toggle('show');
+                });
+            });
+
+            contactClose.addEventListener('click', function (event) {
+                event.preventDefault();
+                contactForm.classList.remove('show');
+            });
+
+            // Fechar o formulário ao clicar fora dele
+            document.addEventListener('click', function (event) {
+                const isClickInsideForm = contactForm.contains(event.target);
+                const isClickOnButton = Array.from(contactButtons).some(button => button.contains(event.target));
+
+                if (!isClickInsideForm && !isClickOnButton) {
+                    contactForm.classList.remove('show');
+                }
+            });
+        });
+
     </script>
 
 
@@ -526,6 +591,56 @@
             }).catch(() => {
                 console.log('Autoplay bloqueado.');
             });
+        });
+
+    </script>
+
+    <!-- Validação -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const inputs = document.querySelectorAll('.input');
+
+            inputs.forEach(input => {
+                // Validação ao digitar
+                input.addEventListener('input', function () {
+                    validateInput(input);
+                });
+
+                // Validação ao sair do campo (blur)
+                input.addEventListener('blur', function () {
+                    validateInput(input);
+                });
+            });
+
+            function validateInput(input) {
+                const value = input.value.trim();
+
+                if (value === '') {
+                    // Campo vazio
+                    input.classList.remove('error', 'valid');
+                    input.style.borderBottomColor = '#353535';
+                } else if (!isValid(input)) {
+                    // Campo com erro
+                    input.classList.add('error');
+                    input.classList.remove('valid');
+                } else {
+                    // Campo válido
+                    input.classList.add('valid');
+                    input.classList.remove('error');
+                }
+            }
+
+            // Exemplo de função de validação personalizada
+            function isValid(input) {
+                if (input.type === 'email') {
+                    // Verificação básica de email
+                    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    return regex.test(input.value);
+                } else {
+                    // Verificação de texto simples (por exemplo, mais de 3 caracteres)
+                    return input.value.length > 3;
+                }
+            }
         });
 
     </script>
