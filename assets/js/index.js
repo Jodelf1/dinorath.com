@@ -1,7 +1,9 @@
+// Videos Carrousel
 document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.video-card');
     const dots = document.querySelectorAll('.dot');
     const backgroundVideo = document.getElementById('background-video');
+    const videoContainer = document.querySelector('.video-container');
 
     let activeIndex = 0;
     let startX = 0;
@@ -34,16 +36,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Adiciona eventos de toque
-    document.addEventListener('touchstart', (e) => {
+    // Adiciona eventos de toque ao contêiner específico de vídeos
+    videoContainer.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
     });
 
-    document.addEventListener('touchmove', (e) => {
+    videoContainer.addEventListener('touchmove', (e) => {
         endX = e.touches[0].clientX;
     });
 
-    document.addEventListener('touchend', () => {
+    videoContainer.addEventListener('touchend', () => {
         if (startX > endX + 50) {
             // Deslizou para a esquerda
             activeIndex = (activeIndex < cards.length - 1) ? activeIndex + 1 : 0;
@@ -58,11 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel(activeIndex);
 });
 
+
 // Lançamentos
 document.addEventListener('DOMContentLoaded', () => {
     const prevArrow = document.querySelector('.prev-arrow');
     const nextArrow = document.querySelector('.next-arrow');
     const conjuntos = document.querySelectorAll('.conjunto');
+    const lancamentosContainer = document.querySelector('.lancamentos-container');
 
     let currentIndex = 0;
     let startX = 0;
@@ -86,16 +90,16 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCarousel();
     });
 
-    // Adiciona eventos de toque
-    document.addEventListener('touchstart', (e) => {
+    // Adiciona eventos de toque ao contêiner específico de lançamentos
+    lancamentosContainer.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
     });
 
-    document.addEventListener('touchmove', (e) => {
+    lancamentosContainer.addEventListener('touchmove', (e) => {
         endX = e.touches[0].clientX;
     });
 
-    document.addEventListener('touchend', () => {
+    lancamentosContainer.addEventListener('touchend', () => {
         if (startX > endX + 50) {
             // Deslizou para a esquerda
             currentIndex = (currentIndex < conjuntos.length - 1) ? currentIndex + 1 : 0;
@@ -117,8 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevArrow = document.querySelector('.prev-p');
     const nextArrow = document.querySelector('.next-p');
     const conjuntos = document.querySelectorAll('.premio');
+    const premiosContainer = document.querySelector('.premios-container');
 
     let currentIndex = 0;
+    let startX = 0;
+    let endX = 0;
 
     function updateCarouselP() {
         conjuntos.forEach((conjunto, index) => {
@@ -138,16 +145,16 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCarouselP();
     });
 
-    // Adiciona eventos de toque
-    document.addEventListener('touchstart', (e) => {
+    // Adiciona eventos de toque ao contêiner específico de prêmios
+    premiosContainer.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
     });
 
-    document.addEventListener('touchmove', (e) => {
+    premiosContainer.addEventListener('touchmove', (e) => {
         endX = e.touches[0].clientX;
     });
 
-    document.addEventListener('touchend', () => {
+    premiosContainer.addEventListener('touchend', () => {
         if (startX > endX + 50) {
             // Deslizou para a esquerda
             currentIndex = (currentIndex < conjuntos.length - 1) ? currentIndex + 1 : 0;
@@ -161,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializa o carrossel
     updateCarouselP();
 });
+
 
 
 
