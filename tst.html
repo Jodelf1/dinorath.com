@@ -1,0 +1,25 @@
+<section class="contactForm flex col a-center" id="contactForm">
+    <a id="contactClose" href="#" class="hide-mobile link">Fechar</a>
+    <img width="80rem" src="./content/04.svg" alt="logo Chelsea Dinorath" loading="lazy">
+    <form class="contact-form flex col" id="contact-form" action="./assets/php/sendMail.php" method="POST">
+        <div class="form-input flex col">
+            <label for="name">Nome</label>
+            <input id="name" class="input" name="name" type="text" placeholder="Nome Sobrenome">
+        </div>
+        <div class="form-input flex col">
+            <label for="phone">Telefone</label>
+            <div class="phone-input-container flex">
+                <input id="phone-indicative" class="phone-indicative" name="phone-indicative" type="text" placeholder="+244" maxlength="4">
+                <input id="phone-number" class="phone-number input" name="phone-number" type="text" placeholder="123456789" maxlength="15">
+            </div>
+        </div>                
+        <div class="form-input flex col">
+            <label for="email">E-Mail</label>
+            <input id="email" class="input" name="email" type="email" placeholder="seuemail@exemplo.com">
+        </div>
+        <div class="form-input">
+            <textarea id="message" name="message" placeholder="Escreva aqui a sua mensagem..."></textarea>
+        </div>
+        <button class="btn" type="submit">Enviar</button>
+    </form>
+</section>

@@ -169,10 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarouselP();
 });
 
-
-
-
-
 // Ajuste na viewport
 function setVh() {
     let vh = window.innerHeight * 0.01;
@@ -184,3 +180,5 @@ setVh();
 
 // Atualize ao redimensionar a janela
 window.addEventListener('resize', setVh);
+
+
