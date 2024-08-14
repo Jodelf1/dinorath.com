@@ -525,3 +525,36 @@ textarea{
 .phone-number {
     width: 70%;
 }
+
+.Newslatter{
+    padding: 4rem 2rem;
+}
+
+.supa-animated {
+
+    /* background: -webkit-linear-gradient(45deg, #2444FF, #24C4FF);
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent; */
+
+    animation: changeColor 6s linear infinite;
+
+    transition: all .1s ease-in-out;
+}
+
+@keyframes changeColor {
+
+    0%,
+    100% {
+        color: #2444FF;
+    }
+
+    33% {
+        color: #24C4FF;
+    }
+
+    66% {
+       color: #040053;
+    }
+}

@@ -79,10 +79,12 @@
                 <div class="form-input flex col">
                     <label for="phone">Telefone</label>
                     <div class="phone-input-container flex">
-                        <input id="phone-indicative" class="phone-indicative" name="phone-indicative" type="text" placeholder="+244" maxlength="4">
-                        <input id="phone-number" class="phone-number input" name="phone-number" type="text" placeholder="123456789" maxlength="15">
+                        <input id="phone-indicative" class="phone-indicative" name="phone-indicative" type="text"
+                            placeholder="+244" maxlength="4">
+                        <input id="phone-number" class="phone-number input" name="phone-number" type="text"
+                            placeholder="123456789" maxlength="15">
                     </div>
-                </div>                
+                </div>
                 <div class="form-input flex col">
                     <label for="email">E-Mail</label>
                     <input id="email" class="input" name="email" type="email" placeholder="seuemail@exemplo.com">
@@ -426,13 +428,24 @@
             </section>
         </section>
 
+        <section class="Newslatter flex f-center">
+            <form class="contact-form flex col" id="contact-form" action="./assets/php/sendMail.php" method="POST">
+                <div class="form-input flex col f-center">
+                    <label for="email">NEWSLATTER</label>
+                    <h2>Receba notícias em seu email.</h2>
+                    <input id="email" class="input" style="margin-top: 1rem;" name="email" type="email" placeholder="seuemail@exemplo.com">
+                </div>
+                <button class="btn" type="submit">Subscrever</button>
+            </form>
+        </section>
     </main>
     <!-- Footer -->
     <footer class="flex row j-between footer-section">
         <section>
-            <p>© Chelsea Dinorath 2024 Todos os direitos reservados.</p>
-            <p>Developed by <a href="" class="supas">Supa Serviços</a></p>
+            <p>© Chelsea Dinorath 2024 | Todos os direitos reservados.</p>
+            <p>Developed by <a href="" class="supas supa-animated">Supa Serviços</a></p>
         </section>
+
         <section>
             <P>Siga-me</P>
             <section class="social-links flex row a-center">
@@ -445,10 +458,10 @@
         </section>
     </footer>
     <!-- Script -->
-    
+
     <script src="./assets/js/index.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    
+
     <script>
         function trocarFundo(elemento) {
             const fotos = document.getElementById('fotos');
@@ -513,7 +526,7 @@
             });
 
             contactForm.addEventListener('click', function (event) {
-                event.preventDefault(); 
+                event.preventDefault();
                 mobileMenu.classList.remove('show');
             });
 
