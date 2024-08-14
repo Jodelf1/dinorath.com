@@ -71,24 +71,24 @@
         <section class="contactForm flex col a-center" id="contactForm">
             <a id="contactClose" href="#" class="hide-mobile link">Fechar</a>
             <img width="80rem" src="./content/04.svg" alt="logo Chelsea Dinorath" loading="lazy">
-            <form class="contact-form flex col" action="">
+            <form class="contact-form flex col" id="contact-form" action="./assets/php/sendMail.php" method="POST">
                 <div class="form-input flex col">
-                    <label for="">Nome</label>
-                    <input class="input" type="name" placeholder="Nome Sobrenome">
+                    <label for="name">Nome</label>
+                    <input id="name" class="input" name="name" type="text" placeholder="Nome Sobrenome">
                 </div>
                 <div class="form-input flex col">
                     <label for="phone">Telefone</label>
                     <div class="phone-input-container flex">
-                        <input class="phone-indicative" type="text" placeholder="+244">
-                        <input class="phone-number input" type="text" placeholder="123456789">
+                        <input id="phone-indicative" class="phone-indicative" name="phone-indicative" type="text" placeholder="+244" maxlength="4">
+                        <input id="phone-number" class="phone-number input" name="phone-number" type="text" placeholder="123456789" maxlength="15">
                     </div>
                 </div>                
                 <div class="form-input flex col">
-                    <label for="">E-Mail</label>
-                    <input class="input" type="email" placeholder="seuemail@exemplo.com">
+                    <label for="email">E-Mail</label>
+                    <input id="email" class="input" name="email" type="email" placeholder="seuemail@exemplo.com">
                 </div>
                 <div class="form-input">
-                    <textarea name="" id="" placeholder="Escreva aqui a sua mensagem..."></textarea>
+                    <textarea id="message" name="message" placeholder="Escreva aqui a sua mensagem..."></textarea>
                 </div>
                 <button class="btn" type="submit">Enviar</button>
             </form>
@@ -445,8 +445,10 @@
         </section>
     </footer>
     <!-- Script -->
+    
     <script src="./assets/js/index.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
     <script>
         function trocarFundo(elemento) {
             const fotos = document.getElementById('fotos');
@@ -560,7 +562,6 @@
 
     </script>
 
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const videos = document.querySelectorAll('video');
@@ -591,56 +592,6 @@
             }).catch(() => {
                 console.log('Autoplay bloqueado.');
             });
-        });
-
-    </script>
-
-    <!-- Validação -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const inputs = document.querySelectorAll('.input');
-
-            inputs.forEach(input => {
-                // Validação ao digitar
-                input.addEventListener('input', function () {
-                    validateInput(input);
-                });
-
-                // Validação ao sair do campo (blur)
-                input.addEventListener('blur', function () {
-                    validateInput(input);
-                });
-            });
-
-            function validateInput(input) {
-                const value = input.value.trim();
-
-                if (value === '') {
-                    // Campo vazio
-                    input.classList.remove('error', 'valid');
-                    input.style.borderBottomColor = '#353535';
-                } else if (!isValid(input)) {
-                    // Campo com erro
-                    input.classList.add('error');
-                    input.classList.remove('valid');
-                } else {
-                    // Campo válido
-                    input.classList.add('valid');
-                    input.classList.remove('error');
-                }
-            }
-
-            // Exemplo de função de validação personalizada
-            function isValid(input) {
-                if (input.type === 'email') {
-                    // Verificação básica de email
-                    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    return regex.test(input.value);
-                } else {
-                    // Verificação de texto simples (por exemplo, mais de 3 caracteres)
-                    return input.value.length > 3;
-                }
-            }
         });
 
     </script>
