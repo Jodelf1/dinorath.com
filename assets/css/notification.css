@@ -1,0 +1,70 @@
+.notifications {
+    position: fixed;  
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1200;
+  }
+  .notifications :where(.toast, .column) {
+    display: flex;
+    align-items: center;
+  }
+  .notifications .toast {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 16px 17px;
+    margin-bottom: 10px;
+    background: var(--black-color);
+    justify-content: space-between;
+    color: var(--white-color);
+    animation: show_toast 0.3s ease forwards;
+  }
+  @keyframes show_toast {
+    0% {
+      transform: translateY(100%);
+    }
+
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes hide_toast {
+    0% {
+      transform: translateY(-10px);
+    }
+
+    100% {
+      transform: translateY(calc(100% + 20px));
+    }
+  }
+
+  .toast .column i {
+    font-size: 1.75rem;
+  }
+  
+  .toast .column span {
+    font-size: var(--vsmall-sz);
+  }
+  .toast i:last-child {
+    color: var(--primary-color);
+    cursor: pointer;
+  }
+  .toast i:last-child:hover {
+    color: var(--dark);
+  }
+  
+  @media screen and (max-width: 530px) {
+    .notifications {
+      top: 3rem;
+    }
+    .notifications .toast {
+      margin-left: 20px;
+    }
+    .buttons .btn {
+      margin: 0 1px;
+      font-size: 1.1rem;
+      padding: 8px 15px;
+    }
+  }

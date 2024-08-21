@@ -1,3 +1,32 @@
+<head>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/objects.css">
+    <link rel="stylesheet" href="./assets/css/root.css">
+    <link rel="stylesheet" href="./assets/css/midiaQ.css">
+    <link rel="stylesheet" href="./assets/css/notification.css">
+</head>
+<header class="flex a-center j-between">
+    <nav class="navbar flex a-center j-between">
+        <ul class="nav-link hide-mobile">
+            <a href="#lancamentos" class="link">Músicas</a>
+        </ul>
+        <ul class="nav-link hide-mobile">
+            <a href="videos.html" class="link">Vídeos</a>
+        </ul>
+        <ul class="nav-link">
+            <a href="index.html" class="logo-section">
+                <img width="70rem" src="./content/logo2.svg" alt="logo Chelsea Dinorath" srcset="">
+            </a>
+        </ul>
+        <ul class="nav-link hide-mobile">
+            <a href="events.html" class="link">Agenda</a>
+        </ul>
+        <ul class="nav-link hide-mobile">
+            <a id="contactBtn" href="#" class="contact-button link">Contato</a>
+        </ul>
+    </nav>
+</header>
+<ul class="notifications"></ul>
 <section class="contactForm flex col a-center" id="contactForm">
     <a id="contactClose" href="#" class="hide-mobile link">Fechar</a>
     <img width="80rem" src="./content/04.svg" alt="logo Chelsea Dinorath" loading="lazy">
@@ -9,7 +38,7 @@
         <div class="form-input flex col">
             <label for="phone">Telefone</label>
             <div class="phone-input-container flex">
-                <input id="phone-indicative" class="phone-indicative" name="phone-indicative" type="text" placeholder="+244" maxlength="4">
+                <input id="phoneIndicative" class="phone-indicative" name="phone-indicative" type="text" placeholder="+244" maxlength="4">
                 <input id="phone-number" class="phone-number input" name="phone-number" type="text" placeholder="123456789" maxlength="15">
             </div>
         </div>                
@@ -23,3 +52,36 @@
         <button class="btn" type="submit">Enviar</button>
     </form>
 </section>
+
+<script src="./assets/js/index.js"></script>
+<script src="./assets/js/message.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const contactButtons = document.querySelectorAll('.contact-button');
+        const contactClose = document.getElementById('contactClose');
+        const contactForm = document.getElementById('contactForm');
+
+        contactButtons.forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                contactForm.classList.toggle('show');
+            });
+        });
+
+        contactClose.addEventListener('click', function (event) {
+            event.preventDefault();
+            contactForm.classList.remove('show');
+        });
+
+        // Fechar o formulário ao clicar fora dele
+        document.addEventListener('click', function (event) {
+            const isClickInsideForm = contactForm.contains(event.target);
+            const isClickOnButton = Array.from(contactButtons).some(button => button.contains(event.target));
+
+            if (!isClickInsideForm && !isClickOnButton) {
+                contactForm.classList.remove('show');
+            }
+        });
+    });
+
+</script>

@@ -5,9 +5,12 @@ use PHPMailer\PHPMailer\Exception;
 require '../../vendor/autoload.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['name'] ?? '';
-    $phoneIndicative = $_POST['phone-indicative'] ?? '';
-    $phoneNumber = $_POST['phone-number'] ?? '';
+
+    header('Content-Type: application/json');
+
+    $name = $_POST['nome'] ?? '';
+    $phoneIndicative = $_POST['phoneId'] ?? '';
+    $phoneNumber = $_POST['numero'] ?? '';
     $email = $_POST['email'] ?? '';
     $message = $_POST['message'] ?? '';
 
@@ -23,18 +26,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Port       = 587;
 
         $mail->setFrom('cdmailsender@gmail.com', 'Messages to Chelsea');
-        $mail->addAddress('Conalpissal@gmail.com', 'Chelsea\'s mail');
+        $mail->addAddress('conalpissal@gmail.com', 'Chelsea\'s mail');
 
         $mail->isHTML(true);
-        $mail->Subject = "Mensagem de $name";
-        $mail->Body    = "Nome: $name<br>Telefone: $phoneIndicative $phoneNumber<br>E-mail: $email<br>Mensagem: $message";
+        $mail->Subject = "Message from $name";
+        $mail->Body    = "<strong>Nome:</strong> $name<br> <strong>Telefone:</strong> $phoneIndicative $phoneNumber<br> <strong>Email:</strong> $email<br><strong>Mensagem:</strong> $message";
 
-        $mail->send();
-        echo 'Mensagem enviada com sucesso!';
+        if ($mail->send()) {
+            // Retorna uma resposta JSON se a inserção foi bem-sucedida
+            echo json_encode([
+                'success' => true,
+                'message' => 'Mensagem enviada'
+            ]);
+        }
+
     } catch (Exception $e) {
-        echo "Mensagem não pôde ser enviada. Erro: {$mail->ErrorInfo}";
+        echo json_encode([
+            'success' => false,
+            'message' => 'Erro ao enviar a mensagem.'
+        ]);
     }
 } else {
-    echo 'Método de solicitação inválido.';
+    echo json_encode([
+        'success' => false,
+        'message' => 'Método inválido'
+    ]);
 }
 ?>
