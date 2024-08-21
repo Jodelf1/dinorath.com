@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./assets/css/objects.css">
     <link rel="stylesheet" href="./assets/css/root.css">
     <link rel="stylesheet" href="./assets/css/midiaQ.css">
+    <link rel="stylesheet" href="./assets/css/notification.css">
 
     <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
 
@@ -44,7 +45,7 @@
     </header>
     <!-- Main Content -->
     <main class="container">
-
+        <ul class="notifications"></ul>
         <section class="hide-desktop menu-mobile-section flex col f-center">
 
             <a href="#" id="menu-icon" class="menu-button hide-desktop">
@@ -79,12 +80,10 @@
                 <div class="form-input flex col">
                     <label for="phone">Telefone</label>
                     <div class="phone-input-container flex">
-                        <input id="phone-indicative" class="phone-indicative" name="phone-indicative" type="text"
-                            placeholder="+244" maxlength="4">
-                        <input id="phone-number" class="phone-number input" name="phone-number" type="text"
-                            placeholder="123456789" maxlength="15">
+                        <input id="phoneIndicative" class="phone-indicative" name="phone-indicative" type="text" placeholder="+244" maxlength="4">
+                        <input id="phone-number" class="phone-number input" name="phone-number" type="text" placeholder="123456789" maxlength="15">
                     </div>
-                </div>
+                </div>                
                 <div class="form-input flex col">
                     <label for="email">E-Mail</label>
                     <input id="email" class="input" name="email" type="email" placeholder="seuemail@exemplo.com">
@@ -272,7 +271,7 @@
         </section>
 
         <!-- Prémios-->
-        <section class="content">
+        <section class="content premios-container">
             <section class="title-section">
                 <h2 class="title">Prémios</h2>
             </section>
@@ -429,11 +428,11 @@
         </section>
 
         <section class="Newslatter flex f-center">
-            <form class="contact-form flex col" id="contact-form" action="./assets/php/sendMail.php" method="POST">
+            <form class="contact-form flex col" id="news-form" method="POST">
                 <div class="form-input flex col f-center">
-                    <label for="email">NEWSLATTER</label>
+                    <label for="email">NEWSLETTER</label>
                     <h2>Receba notícias em seu email.</h2>
-                    <input id="email" class="input" style="margin-top: 1rem;" name="email" type="email" placeholder="seuemail@exemplo.com">
+                    <input id="email-news" class="input" style="margin-top: 1rem;" name="email" type="email" placeholder="seuemail@exemplo.com">
                 </div>
                 <button class="btn" type="submit">Subscrever</button>
             </form>
@@ -460,6 +459,7 @@
     <!-- Script -->
 
     <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/message.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script>
@@ -582,7 +582,7 @@
             videos.forEach(video => {
                 // Impede que o vídeo seja pausado
                 video.addEventListener('pause', (e) => {
-                    video.play();
+               //     video.play();
                 });
 
                 // Impede que o vídeo entre em tela cheia
@@ -601,7 +601,7 @@
             // Tentar reproduzir o vídeo sem som para evitar bloqueio
             video.muted = true;
             video.play().then(() => {
-                video.muted = false; // Reativa o som se desejado
+              //  video.muted = false; // Reativa o som se desejado
             }).catch(() => {
                 console.log('Autoplay bloqueado.');
             });

@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.video-card');
     const dots = document.querySelectorAll('.dot');
     const backgroundVideo = document.getElementById('background-video');
-    const videoContainer = document.querySelector('.video-container');
+    const videoContainer = document.querySelector('.videos-section');
 
     let activeIndex = 0;
     let startX = 0;
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevArrow = document.querySelector('.prev-arrow');
     const nextArrow = document.querySelector('.next-arrow');
     const conjuntos = document.querySelectorAll('.conjunto');
-    const lancamentosContainer = document.querySelector('.lancamentos-container');
+    const lancamentosContainer = document.querySelector('.lancamentos-section');
 
     let currentIndex = 0;
     let startX = 0;
