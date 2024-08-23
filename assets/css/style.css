@@ -1,16 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-@font-face {
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
+/* @font-face {
     font-family: 'PlayfairDisplay';
     src: url('../fonts/PlayfairDisplay-VariableFont_wght.ttf') format('ttf'), ;
     font-display: swap;
-}
+} */
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "PlayfairDisplay", serif;
+    font-family: "New Amsterdam", sans-serif;
     font-optical-sizing: auto;
     text-decoration: none;
     list-style-type: none;
@@ -221,7 +220,7 @@ header {
 
 .left-side .title-section .title-more {
     font-size: var(--mid-sz);
-    border-bottom: solid 5px var(--second-color);
+    border-bottom: solid 5px var(--primary-color);
     font-weight: bold;
     margin-bottom: 1rem;
 }
@@ -491,6 +490,7 @@ textarea{
 
 .form-input label{
     font-size: var(--small-sz);
+    color: var(--primary-color);
 }
 
 .input {

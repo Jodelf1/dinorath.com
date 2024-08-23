@@ -105,6 +105,10 @@ p{
 .small-sz {
     font-size: var(--small-sz);
 }
+
+.text-primary{
+    color: var(--primary-color);
+}
 /* FlexBox */
 
 .flex {
